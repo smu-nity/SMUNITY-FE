@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <link rel="stylesheet" href="static/css/style.css?date=0815">
+    <link rel="icon" href="static/img/favicon.ico">
+    <!-- 웹 참조-->
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e8a335040d.js" crossorigin="anonymous"></script>
+    <script src="static/js/includeHTML.js"></script>
+    <!-- 웹 폰트 참조-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
+    <title>Please Graduate</title>
+</head>
+<body>
+    <div include-html="reference/navbar.html"></div>
+
+<div class="bg_wrapper">
+    <!-- 메인 -->
+    <header class="main_bg">
+        <!-- 소개 문구 -->
+        <div class="bg_text_btn" style="margin-top: 200px;">
+            <div class="bg_small_text fadein_text">
+                간편한 졸업요건 검사 사이트
+            </div>
+            <div class="bg_big_text fadein_text">
+                Please Graduate
+            </div>
+            <div class="bg_btn">
+                <button class="bg_btn_style" onclick="location.href='/mypage/'">검사하기</button>
+            </div>
+        </div>
+        <!-- 방문자 + 검사횟수 -->
+        <div class="num_visit">
+            <div>
+                <i class="fas fa-calendar-day"></i>&nbsp;&nbsp;오늘 방문자 수 : 322
+            </div>
+            <div style="margin-top:0.4rem;">
+                <i class="fas fa-mouse" style="margin-right:0.1rem;"></i>&nbsp;&nbsp;총 방문자 수 : 35213
+            </div>
+            <div style="margin-top:0.4rem;">
+                <i class="fas fa-user"></i>&nbsp;&nbsp;총 회원 수 : 6392
+            </div>
+        </div>
+    </header>
+</div>
+
+
+    <div include-html="reference/footer.html"></div>
+</body>
+<script>
+    includeHTML();
+    function logout() {
+        var back_head = confirm('✋ 정말 로그아웃 하시겠습니까? ✋');
+        if (back_head) {
+            location.href = '/f_logout/';
+        }
+    }
+
+    // 쿠키 여부에 따라 모달창 렌더링
+    var unlook_cookie = document.cookie.match('(^|;) ?' + 'is_unlook_0821' + '=([^;]*)(;|$)');
+    if (unlook_cookie == null) {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    // 모달 창 끄기 + 다시 보지 않음 쿠키 설정
+    var Spanclick_set_cookie = function (x, y) {
+        x.onclick = function () {
+            y.style.display = "none";
+            var chk = document.getElementById('unlook');
+            // 체크하고 누르면 쿠키 생성
+            if (chk.checked) {
+                var date = new Date();
+                date.setTime(date.getTime() + 60 * 24 * 60 * 60 * 1000);
+                document.cookie = 'is_unlook_0821' + '=' + 'unlook' + ';expires=' + date.toUTCString() + ';path=/';
+            }
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    var modal = document.getElementById('myModal');
+    var span = document.getElementsByClassName("close")[0];
+
+    Spanclick_set_cookie(span, modal);
+</script>
+</html>

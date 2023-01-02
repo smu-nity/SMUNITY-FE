@@ -1,0 +1,38 @@
+<!-- 로고 / 메뉴바-->
+<nav class="navbar">
+    <div class="navbar_logo">
+    <!--            {% load static %}-->
+        <a href="/"><img src="static/img/logo.png"></a>
+    </div>
+
+    <ul class="navbar_menu">
+
+        <!-- <div class="navbar_logo">
+            {% load static %}
+            <a href="/"><img src="{% static 'img/logo.png' %}"></a>
+        </div> -->
+
+        <li>
+            <a href='https://forms.gle/f2vUqVg9wQFneBLf7' target="_blank">피드백하기</a>
+        </li>
+
+        <li>
+            <a href='/statistics/'>꿀교양찾기</a>
+        </li>
+
+    <!--            {% if request.session.id %}-->
+        <li>
+            <a href='/mypage/'>마이페이지</a>
+        </li>
+    <!--            {% endif %}-->
+
+        <li>
+            <!-- 로그인 세션 활용 -->
+    <!--                {% if not request.session.id %}-->
+    <!--                <a href='/login/'>로그인</a>-->
+<!--            {% else %}-->
+            <a href='javascript:logout()'>로그아웃</a>
+    <!--                {% endif %}-->
+        </li>
+    </ul>
+</nav>
