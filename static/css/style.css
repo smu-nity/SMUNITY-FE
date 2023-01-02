@@ -164,19 +164,10 @@ input[type="button"]
     width:100%;
     max-width: 1600px;
     min-height:750px;
-    background-image: url('../img/main_bg2.png');
+    background-image: url('../img/main.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin: 0 auto;
-}
-
-.sejong_logo{
-    margin:1rem;
-    width:10rem;
-    min-height:10rem;
-    background-image: url('../img/sejong_logo.png');
-    background-size: 100% 100%;
-    float:right;
 }
 
 .bg_text_btn {

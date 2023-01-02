@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <link rel="stylesheet" href="static/css/style.css?date=0815">
+    <link rel="icon" href="static/img/favicon.ico">
+    <!-- 웹 참조-->
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/e8a335040d.js" crossorigin="anonymous"></script>
+    <script src="static/js/includeHTML.js"></script>
+    <!-- 웹 폰트 참조-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
+    <title>Please Graduate</title>
+</head>
+<body>
+    <div include-html="reference/navbar.html"></div>
+
+    <div class="gray_sec">
+        <div class="container">
+            <div style="font-size:4rem;">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div style="font-size:2rem; font-weight:bold;">비밀번호 변경</div>
+        </div>
+    </div>
+
+    <!-- 입력란 -->
+    <div class="white_sec">
+        <div class="container">
+            <form action="/f_mod_pw/" method="post" name='regi_form' onsubmit="return check_up()">
+                <div class="regi_box">
+                    <label>ID</label>
+                    <input type="text" name="id" value="201911019" style="background-color:rgb(248,249,250);" readonly>
+                    <label>비밀번호</label>
+                    <input id="pw1" type="password" name="password">
+                    <label>비밀번호 재확인</label>
+                    <input id="pw2" type="password">
+                </div>
+                <input type='submit' class='regi_btn' value='변경하기'>
+            </form>
+        </div>
+    </div>
+
+    <div include-html="reference/footer.html"></div>
+</body>
+<script>
+    includeHTML();
+    function logout() {
+        var back_head = confirm('✋ 정말 로그아웃 하시겠습니까? ✋');
+        if (back_head) {
+            location.href = '/f_logout/';
+        }
+    }
+
+    function check_up(){
+        if(!document.getElementById('pw1').value){
+            alert('😢 비밀번호를 입력해주세요.') ;
+            regi_form.pw1.focus();
+            return false;
+        }
+        if(document.getElementById('pw1').value !== document.getElementById('pw2').value){
+            alert('😢 비밀번호가 일치하지 않습니다.') ;
+            regi_form.pw1.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>
