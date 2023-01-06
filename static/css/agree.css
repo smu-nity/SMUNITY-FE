@@ -93,24 +93,5 @@
     
 }
 
-/* ---------------------------------( agree 링크 / 강조 )---------------------------------------- */
 
-
-.link_site{
-    font-size:0.8rem;
-    padding:0.1rem 0.3rem 0.1rem 0.3rem;
-    color:white;
-    border-radius: 3px;
-    background-color: rgb(164, 26, 55);
-}
-
-.caution_info{
-    color:#d32f2f; 
-    font-weight:bold;
-}
-
-.info_agree{
-    padding-top:1rem;
-    text-align:right;
-}
 

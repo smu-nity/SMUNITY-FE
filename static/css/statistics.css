@@ -16,10 +16,9 @@
     font-size: 1.6rem;
 }
 
-.statistics_color_span {
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgb(164, 26, 55)
+.satatistics_user_info{
+    font-size: 1.4rem;
+    color: #6188E8;
 }
 
 .filter_wrap {
@@ -31,13 +30,6 @@
     margin: 0 auto;
     font-size: 1.1rem;
     margin-top: 1.5rem;
-}
-
-.filter_title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 0 1rem 0;
-    text-align: center;
 }
 
 .filter_radio_wrap {
@@ -92,7 +84,7 @@
 }
 
 .filter_btn {
-    background: rgb(164, 26, 55);
+    background: #6188E8;
     width: 12%;
     color: white;
     font-size: 1.1rem;
@@ -122,7 +114,7 @@
     width: 15px;
     height: 15px;
     border: 10px solid #e0e0e0;
-    border-top: 10px solid rgb(164, 26, 55);
+    border-top: 10px solid  #6188E8;
     border-radius: 50em;
     transition: all .1s;
     animation-name: spinCircle;
