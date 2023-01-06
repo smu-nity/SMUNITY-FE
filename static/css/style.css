@@ -43,7 +43,7 @@ input[type="button"]
 }
 
 .big_title{
-    font-size:2rem; 
+    font-size:1.5rem; 
     font-weight:bold;
 }
 
@@ -1012,7 +1012,7 @@ body:not(.device-touch) .suc_btn
 }
 
 .custom_title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: bold;
     margin-top: 1rem;
     text-align: center;
@@ -1032,7 +1032,7 @@ body:not(.device-touch) .suc_btn
     height: auto;
     padding: 1rem 2.5rem 1rem 2.5rem;
     margin: 1rem 1rem 2rem;
-    border: 1px solid rgb(216, 216, 216);
+    border-bottom: 1px solid lightgray;
     background-color: white;
     font-size: 0.9rem;
 }
@@ -1088,18 +1088,19 @@ body:not(.device-touch) .suc_btn
     font-weight: bold;
 }
 
-.ajax_search_btn {
-    background: rgb(164, 26, 55);
+.custom_search_btn {
+    background: #393939;
     width: 8%;
+    height: 40px;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 0.5rem;
     cursor: pointer;
     outline: 0;
-    margin-left: 0.3rem;
+    margin-left: 0.8rem;
 }
 
 .add_btn {
@@ -1138,6 +1139,11 @@ body:not(.device-touch) .suc_btn
     padding: 0.5rem;
     cursor: pointer;
     outline: 0;
+}
+
+#s_num{
+    margin-left: 2rem;
+    height: 8%;
 }
 
 
