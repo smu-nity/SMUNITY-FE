@@ -100,7 +100,7 @@
 }
 
 .custom_search_btn {
-    background: #393939;
+    background: #6188E8;
     width: 8%;
     height: 40px;
     color: white;
@@ -140,16 +140,23 @@
 }
 
 .save_btn {
-    background: rgb(164, 26, 55);
-    width: 9%;
+    background: #6188E8;
+    width: 8%;
+    height: 40px;
     color: white;
     font-size: 1rem;
     font-weight: bold;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 0.5rem;
     cursor: pointer;
     outline: 0;
+    margin-left: 0.8rem;
+}
+
+.caution{
+    color: #d32f2f;
+    font-weight: bold;    
 }
 
 #s_num{
