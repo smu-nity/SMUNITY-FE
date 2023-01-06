@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
+    <link rel="stylesheet" href="static/css/custom.css">
     <link rel="icon" href="static/img/favicon.ico">
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
@@ -23,57 +24,49 @@
 
     <div class="gray_sec">
         <div class="container">
-            <div style="font-size:4rem;">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="big_title">기이수과목 커스텀</div>
+            <div class="big_title">기이수과목 수정</div>
         </div>
     </div>
 
     <div class="white_sec">
         <div class="custom_box_wrap">
-            <!-- 사용법 박스 -->
+            <!-- 사용법 -->
             <div>
-                <div class="custom_title">사용법</div>
+                <div class="custom_title">How to use</div>
                 <div class="custom_box">
-                    <p>1. 추가하고 싶은 과목의 <span class="caution_info">학수번호</span>를 검색합니다.</p>
-                    <p style="margin-left:1rem; font-size:0.85rem;">- 학수번호 찾는 법 :
-                        <a class="link_site" target="_blank"
-                            href="https://portal.sejong.ac.kr/jsp/login/loginSSL.jsp?rtUrl=sjpt.sejong.ac.kr">sjpt</a>
-                        -> 왼쪽 메뉴바에서 수업/성적 -> 강좌조회 및 수강신청 -> 강의시간표조회 -> 교과목명으로 검색
-                    </p>
-                    <p>2. 검색 후 해당 과목이 맞는지 확인하고, 과목의 <span class="caution_info">이수구분(ex. 전선, 전필 등)을 반드시 설정해줍니다.</span> </p>
-                    <p>3. 이수구분을 설정했다면 추가하기 버튼을 눌러 임시 기이수과목 표에 해당 과목을 추가합니다.</p>
-                    <p>4. 추가된 과목표를 확인하고 저장 버튼을 눌러 자신의 정보를 업데이트합니다.</p>
+                    <p class="container" style="font-weight: bold; font-size: 1.2rem;">과목 추가</p>
+                    <p>1. 학수번호 칸에 해당하는 학수번호를 입력하고 검색합니다.</p>
+                    <p>2. 해당 과목에대한 년도,이수구분을 선택합니다.</p>
+                    <p>3. 변경 내용을 확인하고 저장하기를 누릅니다.</p>
+                    <p class="container" style="font-weight: bold; font-size: 1.2rem;">과목 삭제</p>
+                    <p>1. 삭제하고 싶은 과목의 옆에 '삭제'버튼을 클릭합니다.</p>
+                    <p>2. 변경 내용을 확인하고 저장하기를 누릅니다.</p>
                     <div style="margin-top: 1.2rem;">
-                        <p><span class="caution_info">※ 융합/연계전공 과목의 경우 과목 검색이 되지 않습니다.</span></p>
-                        <p><span class="caution_info">※ ELP1/대학영어 이수면제자는 "면제"를 검색하여 커스텀 과목을 추가해주세요!</span></p>
+                        <p><span class="caution">※ 주의 내용 ※</span></p>
+                        <p><span class="caution">※ 주의 내용 ※</span></p>
                     </div>
-
                 </div>
             </div>
-
-            <!-- 검색창 박스 -->
+            <!-- 검색 -->
             <div>
                 <div>
                     <div class="custom_title">학수번호 검색</div>
                 </div>
                 <div class="my_box_grade">
                     <div style="padding:2.5rem 2.5rem 0 2.5rem">
-
-                        <!-- 검색 기능 -->
                         <div class="custom_form">
-                            <input type="text" id="s_num" placeholder="학수번호">
-                            <button class="ajax_search_btn" onclick="ajax_conn()">검색</button>
+                            <span style="font-weight: bold;">학수번호</span>
+                            <input type="text" id="s_num">
+                            <button class="custom_search_btn" onclick="ajax_conn()">검색</button>
                         </div>
 
                         <!-- 검색결과 박스 -->
                         <div class="result_zone">
                             <div class="custom_subtitle">
-                                ⌨️ 검색 결과
+                                검색 결과
                                 <p
                                     style="color:rgb(199, 199, 199); font-size:0.9rem; font-weight: lighter; margin-top:0.4rem">
-                                    자신에게 맞는 예상 이수구분을 선택해야합니다
+                                    학수번호를 검색해주세요.
                                 </p>
                             </div>
 
@@ -81,7 +74,7 @@
                             <div id="result_div"></div>
                         </div>
 
-                        <!-- 내 기이수과목 주루룩 -->
+                        <!-- 기이수과목 결과 -->
                         <div style="margin-top:5rem;">
                             <!-- -->
                             <form action='/f_add_custom/' method='post' onclick='combine()'>
