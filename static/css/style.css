@@ -59,7 +59,7 @@ input[type="button"]
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom : 0.001px solid rgb(216, 216, 216);
+
     background-color: white;
     padding: 13px;
 }
