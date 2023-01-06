@@ -333,7 +333,7 @@ input[type="button"]
     padding-top : 1.5rem;
     padding-bottom : 6rem;
 }
-.fcontainer {
+/* .fcontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -341,7 +341,7 @@ input[type="button"]
     max-width: 100%;
     height: 100%;
     background-color: rgb(248,249,250);
-}
+} */
 
 .rcontainer {
     display: flex;
@@ -350,18 +350,13 @@ input[type="button"]
     align-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgb(248,249,250);
+    background-color: #E8E9ED;
     max-width: 1500px;
 }
 
 .resultbox {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: center;
-    align-items: center;
-
-    text-align: center; */
     width: 600px;
     height: 300px;
     margin: 45px 35px 20px;
@@ -370,8 +365,10 @@ input[type="button"]
     border-width: 1px;
     border-radius: 20px;
     background-color: #E8E9ED;
-    border:1px solid #E8E9ED;
-    box-shadow: 5px 5px 20px 10px #CFD2DA ;
+    border: 10px solid #EBECF0;
+    box-shadow: 10px 10px 20px 20px #D4D5D8 ;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
 }
 
 .container0 {
@@ -379,24 +376,45 @@ input[type="button"]
     height: 370px;
 }
 
-.name {
+.result_name {
     background-color: none;
     position: relative;
     padding: 15px;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 600;
     text-align: left;
     margin: 0;
-    margin-left: 3rem;
-    margin-top: 3rem;
-    margin-right: 3rem;
-    border-width: 10px;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    margin-right: 2rem;
 }
 
-.number{
-    width: 100px;
-    height: 120px;
-    float: right;
+.result_container{
+    width: auto;
+    height: auto;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.result_content{
+    width: 130px;
+    height: 130px;
+}
+
+.result_content_number{
+    width: 140px;
+    height: 100px;
+    text-align: center;
+    color: #6188E8;
+    font-size: 3rem;
+    font-weight:bolder;
+}
+
+.result_content_info{
+    text-align: center;
+    color: #313131;
+    font-weight: bolder;
 }
 
 .box {
