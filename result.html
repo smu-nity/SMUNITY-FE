@@ -89,8 +89,13 @@
                         <div class="result_content_info">필요 학점</div>
                     </div>
                     <div class="result_content">
-                        <div class="result_content_number" data-count="20">0</div>
-                        <div class="result_content_info">교필</div>
+                        <div class="pie-chart">
+                            <div class="pie-chart1">
+                                <div class="pie-chart-inner">
+                                    <span class="center">80%</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1092,6 +1097,7 @@
 
     <div include-html="reference/footer.html"></div>
 </body>
+<script type="text/javascript" rel="javascript" src="/static/js/result.js"></script>
 <script>
     //숫자 카운트 애니메이션
     $('.result_content_number').each(function() { // .count-num에 각각 적용
