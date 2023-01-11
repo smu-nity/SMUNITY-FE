@@ -369,12 +369,97 @@ input[type="button"]
     box-shadow: 10px 10px 20px 20px #D4D5D8 ;
     perspective-origin: 50% 50%;
     perspective: 400px;
+
+    /* fade */
+    display: inline-block;
+    background: none;
+    padding: 10px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
 
-.container0 {
-    min-width: 750px;
-    height: 370px;
+/* fade */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* fade */
+/* piechart */
+.pie-chart {
+    position: relative;
+    background-color: #dfe0e5;
+    /* display:inline-block; */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin-left: 15px;
+    box-shadow: 0px 0px 5px 4px #bebec0 inset;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-chart1{
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-chart-inner{
+    background-color: #dfe0e5;
+    width: 83%;
+    height: 83%;
+    border-radius: 50%;
+  }
+  span.center{
+    background: #E8E9ED;
+    /* display : block; */
+    position: absolute;
+    top:50%; left:50%;
+    width:50px; height:50px;
+    border-radius: 50%;
+    text-align:center; 
+    line-height: 50px;
+    font-size:15px;
+    font-weight: bold;
+    color: #6188E8;
+    font-weight: bold;
+     transform: translate(-50%, -50%);
+     box-shadow: 0px 0px 5px 4px #bebec0;
+  }
+  /* piechart */
 
 .result_name {
     background-color: none;
@@ -400,6 +485,8 @@ input[type="button"]
 .result_content{
     width: 130px;
     height: 130px;
+    align-content: center;
+    align-items: center;
 }
 
 .result_content_number{
@@ -427,11 +514,6 @@ input[type="button"]
     position: relative;
     width: 100%;
     border-radius: 30px;
-}
-
-.chart_box{
-    margin-left : 20px;
-    margin-right : 25px;
 }
 
 
