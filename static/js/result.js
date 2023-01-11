@@ -15,7 +15,7 @@ $(window).ready(function(){
        } else{
          clearInterval(func1);
        }
-     },40);
+     },20);
  }
 
  function color1(i, classname,colorname){
@@ -25,7 +25,7 @@ $(window).ready(function(){
  }
 
  //숫자 카운트 애니메이션
- $('.result_content_number').each(function() { // .count-num에 각각 적용
+ $('.count').each(function() { // .count-num에 각각 적용
   var $this = $(this),
   countTo = $this.attr('data-count');
   // $this = 첫번째~세번째 .count-num
@@ -37,7 +37,7 @@ $(window).ready(function(){
       // 0에서 countNum이 된다
   },
   {
-  duration: 3000, // 애니메이션이 완료될때까지 걸리는 시간
+  duration: 1500, // 애니메이션이 완료될때까지 걸리는 시간
   easing:'linear', // 애니메이션 효과 방식
   step: function() { // 움직임 각 스텝별로 실행될 함수
   $this.text(Math.floor(this.countNum));
@@ -46,25 +46,45 @@ $(window).ready(function(){
   complete: function() { // 움직임이 멈춘 후 실행될 함수
   $this.text(this.countNum);
   // this.countNum이 $this의 text값이 된다
-  //alert('finished');
+  }
+  });  
+});
+
+
+ //퍼센트 애니메이션
+ $('.percent').each(function() {
+  var $this = $(this),
+  countTo = $this.attr('percent');
+
+  $({ countNum: $this.text()}).animate({
+      countNum: countTo 
+  },
+  {
+  duration: 1500,
+  easing:'linear',
+  step: function() {
+  $this.text(Math.floor(this.countNum)+"%");
+  },
+  complete: function() {
+  $this.text(this.countNum+"%");
   }
   });  
 });
 
  //typing animation
- $('.result_content_info').each(function() { //각각 적용
-  let $this = $(this)
-  const content = $this.attr('contain');
-  let i = 0;
-  $(this).html("a")
-  let txts =''
-  function typing(){
-    if (i < content.length) {
-    var txt = content.charAt(i);
-    txts += txt
-    $this.html(txts);
-    i++;
-    }
-  }
-  setInterval(typing, 200)
-});
+//  $('.result_content_info').each(function() { //각각 적용
+//   let $this = $(this)
+//   const content = $this.attr('contain');
+//   let i = 0;
+//   $(this).html("a")
+//   let txts =''
+//   function typing(){
+//     if (i < content.length) {
+//     var txt = content.charAt(i);
+//     txts += txt
+//     $this.html(txts);
+//     i++;
+//     }
+//   }
+//   setInterval(typing, 200)
+// });

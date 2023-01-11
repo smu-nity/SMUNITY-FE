@@ -424,7 +424,7 @@ input[type="button"]
     border-radius: 50%;
     transition: 0.3s;
     margin-left: 15px;
-    box-shadow: 0px 0px 5px 2px #bebec0 inset;
+    box-shadow: 0px 0px 5px 4px #bebec0 inset;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -456,6 +456,7 @@ input[type="button"]
     color: #6188E8;
     font-weight: bold;
      transform: translate(-50%, -50%);
+     box-shadow: 0px 0px 5px 4px #bebec0;
   }
   /* piechart */
 
