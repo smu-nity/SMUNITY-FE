@@ -439,8 +439,8 @@ input[type="button"]
   }
   .pie-chart-inner{
     background-color: #dfe0e5;
-    width: 85%;
-    height: 85%;
+    width: 83%;
+    height: 83%;
     border-radius: 50%;
   }
   span.center{
@@ -453,6 +453,7 @@ input[type="button"]
     text-align:center; 
     line-height: 50px;
     font-size:15px;
+    font-weight: bold;
     color: #6188E8;
     font-weight: bold;
      transform: translate(-50%, -50%);
