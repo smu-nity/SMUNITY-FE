@@ -329,11 +329,11 @@ input[type="button"]
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(248,249,250);
+    background-color: #E8E9ED;
     padding-top : 1.5rem;
     padding-bottom : 6rem;
 }
-.fcontainer {
+/* .fcontainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -341,7 +341,7 @@ input[type="button"]
     max-width: 100%;
     height: 100%;
     background-color: rgb(248,249,250);
-}
+} */
 
 .rcontainer {
     display: flex;
@@ -350,43 +350,158 @@ input[type="button"]
     align-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgb(248,249,250);
+    background-color: #E8E9ED;
     max-width: 1500px;
 }
 
 .resultbox {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    width: 405px;
+    width: 600px;
     height: 300px;
     margin: 45px 35px 20px;
     border-color: black;
     border-style: solid;
     border-width: 1px;
     border-radius: 20px;
-    background-color: white;
-    border:1.3px solid rgb(216, 216, 216);
+    background-color: #E8E9ED;
+    border: 10px solid #EBECF0;
+    box-shadow: 10px 10px 20px 20px #D4D5D8 ;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+
+    /* fade */
+    display: inline-block;
+    background: none;
+    padding: 10px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
 
-.container0 {
-    min-width: 750px;
-    height: 370px;
+/* fade */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* fade */
+/* piechart */
+.pie-chart {
+    position: relative;
+    background-color: #dfe0e5;
+    /* display:inline-block; */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin-left: 15px;
+    box-shadow: 0px 0px 5px 4px #bebec0 inset;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-chart1{
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pie-chart-inner{
+    background-color: #dfe0e5;
+    width: 83%;
+    height: 83%;
+    border-radius: 50%;
+  }
+  span.center{
+    background: #E8E9ED;
+    /* display : block; */
+    position: absolute;
+    top:50%; left:50%;
+    width:50px; height:50px;
+    border-radius: 50%;
+    text-align:center; 
+    line-height: 50px;
+    font-size:15px;
+    font-weight: bold;
+    color: #6188E8;
+    font-weight: bold;
+     transform: translate(-50%, -50%);
+     box-shadow: 0px 0px 5px 4px #bebec0;
+  }
+  /* piechart */
 
-.name {
+.result_name {
     background-color: none;
     position: relative;
-    padding: 15px 0 15px 0;
-    font-size: 22px;
+    padding: 15px;
+    font-size: 25px;
     font-weight: 600;
-    text-align: center;
+    text-align: left;
+    margin: 0;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    margin-right: 2rem;
+}
 
-    border-width: 10px;
+.result_container{
+    width: auto;
+    height: auto;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.result_content{
+    width: 130px;
+    height: 130px;
+    align-content: center;
+    align-items: center;
+}
+
+.result_content_number{
+    width: 140px;
+    height: 100px;
+    text-align: center;
+    color: #6188E8;
+    font-size: 3rem;
+    font-weight:bolder;
+}
+
+.result_content_info{
+    text-align: center;
+    color: #313131;
+    font-weight: bolder;
 }
 
 .box {
@@ -394,17 +509,11 @@ input[type="button"]
     flex-direction: row;
     background-color: none;
     justify-content: space-evenly; 
-    align-content: center;
-    align-items: center;
+    /* align-content: center;
+    align-items: center; */
     position: relative;
-
     width: 100%;
     border-radius: 30px;
-}
-
-.chart_box{
-    margin-left : 20px;
-    margin-right : 25px;
 }
 
 

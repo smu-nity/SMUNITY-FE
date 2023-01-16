@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
-    <link rel="icon" href="static/img/favicon.ico">
+    <link rel="icon" href="static/img/logo.jpg">
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -16,14 +16,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
-    <title>Please Graduate</title>
+    <!-- 아이콘 참조 -->
+    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Smunity</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
 
     <div class="lcontainer">
 
-        <!-- 총학점 -->
+        <!-- 총학점
         <div class="fcontainer">
             <div class="resultbox container0">
                 <div class="name name0">
@@ -65,31 +67,119 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="rcontainer">
-            <!-- 복필/연선 -->
+            <!-- 내 상태 -->
             <div class="resultbox">
-                <div class="name">
-                    복수전공 필수
+                <div class="result_name">
+                    내 학점 <a href="/custom.html" title="내 기이수과목 수정"><span style="float: right;"><i class="fa-solid fa-circle-plus"></i></span></a>
                 </div>
-                <div class="box">
-                    <div id="chart_multi_me">
-                        <strong></strong>
+                <div class="result_container">
+                    <div class="result_content">
+                        <div class="result_content_number">136</div>
+                        <div class="result_content_info">총 기준 학점</div>
                     </div>
-                    <div class="sbox">
-                        <div class="gbox" style="margin-top:-1rem">
-                            <span class="grade">기준 학점</span>
-                            <span class="r" id="grade_multi_me"></span>
-                        </div>
-                        <div class="gbox" style="margin-top:-3rem">
-                            <span class="grade">이수 학점</span>
-                            <span class="r" id="my_grade_multi_me"></span>
+                    <div class="result_content">
+                        <div class="result_content_number count" data-count="86">0</div>
+                        <div class="result_content_info">총 이수 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number count" data-count="50" style="color: #e89292;">0</div>
+                        <div class="result_content_info" >필요 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="pie-chart">
+                            <div class="pie-chart1">
+                                <div class="pie-chart-inner">
+                                    <span class="center percent" percent="80"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- 교필 -->
+            <div class="resultbox">
+                <div class="result_name">
+                    교필
+                </div>
+                <div class="result_container">
+                    <div class="result_content">
+                        <div class="result_content_number">150</div>
+                        <div class="result_content_info test">총 기준 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number count" data-count="100">0</div>
+                        <div class="result_content_info">총 이수 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number count" data-count="50" style="color: #e89292;">0</div>
+                        <div class="result_content_info">필요 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="pie-chart">
+                            <div class="pie-chart1">
+                                <div class="pie-chart-inner">
+                                    <span class="center percent" percent = "80"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 교선 -->
+            <div class="resultbox">
+                <div class="result_name">
+                    교선
+                </div>
+                <div class="result_container">
+                    <div class="result_content">
+                        <div class="result_content_number">76</div>
+                        <div class="result_content_info" contain = "총 기준 학점"></div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number">54</div>
+                        <div class="result_content_info" contain = "총 이수 학점"></div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number">50</div>
+                        <div class="result_content_info" contain = "필요 학점"></div>
+                    </div>
+                    <div class="result_content">
+                        추천교양 <br>
+                        ~~~<br>
+                        ~~~
+                    </div>
+                </div>
+            </div>
+
+            <!-- 전공 -->
+            <div class="resultbox">
+                <div class="result_name">
+                    전공
+                </div>
+                <div class="result_container">
+                    <div class="result_content">
+                        <div class="result_content_number">75</div>
+                        <div class="result_content_info">총 기준 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number">35</div>
+                        <div class="result_content_info">총 이수 학점</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number">36</div>
+                        <div class="result_content_info">필요 학점</div>
+                    </div>
+                    <div class="result_content">
+                        추천교양 <br>
+                        ~~~<br>
+                        ~~~
+                    </div>
+                </div>
+            </div>
             <div class="resultbox">
                 <div class="name">
                     복수전공 선택
@@ -1011,6 +1101,7 @@
 
     <div include-html="reference/footer.html"></div>
 </body>
+<script type="text/javascript" rel="javascript" src="/static/js/result.js"></script>
 <script>
     includeHTML();
     function logout() {
