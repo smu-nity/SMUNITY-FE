@@ -20,11 +20,12 @@
     <title>Please Graduate</title>
 </head>
 <body>
+<img src= url('../img/checker-on.svg'>
     <div include-html="reference/navbar.html"></div>
 
     <div class="gray_sec">
     <div class="container">
-        <div class="big_title">교양 추천</div>
+        <div class="big_title">꿀교양 찾기</div>
     </div>
 </div>
     <div class="white_sec">
@@ -33,8 +34,11 @@
             <div>
                 <div class="my_box_grade">
                     <!-- 필터링 박스 -->
-                    <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                        <!-- 구분 박스들 -->
+                <div style="padding:2.5rem 2.5rem 0 2.5rem">
+                    <!-- 상단 제목 -->
+                    <div class='filter_title'>
+                        📌 필터링
+                    </div>
                         <div class="filter_wrap">
                             <form method="post" id='filter_form' name='filter_form'>
                                 <!-- 내부 박스 -->
@@ -44,28 +48,32 @@
                                         <div class='filter_select_title'>학점</div>
                                         <div class='filter_select_box'>
                                             <div class='filter_select_chk'>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="0.5" checked>
-                                                    <label></label>
-                                                    &nbsp;0.5 학점
+
+                                                <label for="0.5grade" class="chk_box">
+	                                                <input type="checkbox" id="0.5grade" name="grade[]" value="0.5" checked />
+                                                    <span class="on"></span>
+	                                                0.5 학점
                                                 </label>
                                                 <br>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="1" checked>
-                                                    <label></label>
-                                                    &nbsp;1 학점
+
+                                                <label for="1grade" class="chk_box">
+	                                                <input type="checkbox" id="1grade" name="grade[]" value="1" checked />
+                                                    <span class="on"></span>
+	                                                1 학점
                                                 </label>
                                                 <br>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="2" checked>
-                                                    <label></label>
-                                                    &nbsp;2 학점
+
+                                                <label for="2grade" class="chk_box">
+	                                                <input type="checkbox" id="2grade" name="grade[]" value="2" checked />
+                                                    <span class="on"></span>
+	                                                2 학점
                                                 </label>
                                                 <br>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="3" checked>
-                                                    <label></label>
-                                                    &nbsp;3 학점
+
+                                                <label for="3grade" class="chk_box">
+	                                                <input type="checkbox" id="3grade" name="grade[]" value="3" checked />
+                                                    <span class="on"></span>
+	                                                3 학점
                                                 </label>
 
                                             </div>
@@ -78,48 +86,54 @@
                                         <div class='filter_select_box' style="width:20rem;">
                                             <div class="filter_select_chk_wrap">
                                                 <div id='selection_box' class='filter_select_chk'>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="사상과역사" checked>
-                                                        <label></label>
-                                                        &nbsp;사상과역사
+                                                    <label for="history" class="chk_box">
+	                                                    <input type="checkbox" id="history" name="grade[]" value="사상과역사" checked />
+                                                        <span class="on"></span>
+	                                                    사상과역사
                                                     </label>
                                                     <br>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="사회와문화" checked>
-                                                        <label></label>
-                                                        &nbsp;사회와문화
+
+                                                    <label for="culture" class="chk_box">
+	                                                    <input type="checkbox" id="culture" name="grade[]" value="사회와문화" checked />
+                                                        <span class="on"></span>
+	                                                    사회와문화
                                                     </label>
                                                     <br>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="자기계발과진로" checked>
-                                                        <label></label>
-                                                        &nbsp;자기계발과진로<div style="margin: -0.5rem 0 0 1.6rem; font-size: 0.9rem;">(융합과창업)</div>
+
+                                                    <label for="career" class="chk_box">
+	                                                    <input type="checkbox" id="career" name="grade[]" value="자기계발과진로" checked />
+                                                        <span class="on"></span>
+	                                                    자기계발과진로<div style="font-size: 0.9rem;">(융합과창업)</div>
                                                     </label>
+                                                    <br>
                                                 </div>
 
                                                 <div class='filter_select_chk'>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="자연과과학기술" checked>
-                                                        <label></label>
-                                                        &nbsp;자연과과학기술
+                                                    <label for="science" class="chk_box">
+	                                                    <input type="checkbox" id="science" name="grade[]" value="자연과학과기술" checked />
+                                                        <span class="on"></span>
+	                                                    자연과학과기술
                                                     </label>
                                                     <br>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="세계와지구촌" checked>
-                                                        <label></label>
-                                                        &nbsp;세계와지구촌
+
+                                                    <label for="global" class="chk_box">
+	                                                    <input type="checkbox" id="global" name="grade[]" value="세계와지구촌" checked />
+                                                        <span class="on"></span>
+	                                                    세계와지구촌
                                                     </label>
                                                     <br>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="예술과체육" checked>
-                                                        <label></label>
-                                                        &nbsp;예술과체육
+
+                                                    <label for="art" class="chk_box">
+	                                                    <input type="checkbox" id="art" name="grade[]" value="예술과체육" checked />
+                                                        <span class="on"></span>
+	                                                    예술과체육
                                                     </label>
                                                     <br>
-                                                    <label>
-                                                        <input type="checkbox" name="selection[]" value="기타">
-                                                        <label></label>
-                                                        &nbsp;기타영역
+
+                                                    <label for="etc" class="chk_box">
+	                                                    <input type="checkbox" id="etc" name="grade[]" value="기타영역"/>
+                                                        <span class="on"></span>
+	                                                    기타영역
                                                     </label>
 
                                                 </div>
@@ -138,7 +152,7 @@
                             <div class='statistics_user_sub'>
                                 스뮤니티 사용자들의 교양 데이터를 사용 중입니다<br>
                                     총 인원 : <span class="satatistics_user_info">8129</span>명 <br>
-                                    학과 : <span class="satatistics_user_info">43</span>개 <br>    
+                                    학과 : <span class="satatistics_user_info">43</span>개 <br>
                             </div>
                         </div>
                         <!-- 결과 박스 -->
