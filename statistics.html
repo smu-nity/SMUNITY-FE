@@ -17,14 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
-    <title>Smunity</title>
+    <title>Please Graduate</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
 
     <div class="gray_sec">
     <div class="container">
-        <div class="big_title">교양 추천</div>
+        <div class="big_title">꿀교양 찾기</div>
     </div>
 </div>
     <div class="white_sec">
@@ -33,8 +33,11 @@
             <div>
                 <div class="my_box_grade">
                     <!-- 필터링 박스 -->
-                    <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                        <!-- 구분 박스들 -->
+                <div style="padding:2.5rem 2.5rem 0 2.5rem">
+                    <!-- 상단 제목 -->
+                    <div class='filter_title'>
+                        📌 필터링
+                    </div>
                         <div class="filter_wrap">
                             <form method="post" id='filter_form' name='filter_form'>
                                 <!-- 내부 박스 -->
@@ -44,11 +47,9 @@
                                         <div class='filter_select_title'>학점</div>
                                         <div class='filter_select_box'>
                                             <div class='filter_select_chk'>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="0.5" checked>
-                                                    <label></label>
-                                                    &nbsp;0.5 학점
-                                                </label>
+    
+                                                <label for="0.5grade"><img src="static/img/checker-on.svg" style="width: 8%; border: 1px solid black;"><input type="checkbox" id="0.5grade" name="grade[]" value="0.5" checked>&nbsp;0.5 학점</label>
+
                                                 <br>
                                                 <label>
                                                     <input type="checkbox" name="grade[]" value="1" checked>
