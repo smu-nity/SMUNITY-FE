@@ -61,7 +61,7 @@ input[type="button"]
     align-items: center;
     border-bottom : 0.001px solid rgb(216, 216, 216);
     background-color: white;
-    padding: 13px;
+    padding: 10px;
 }
 
 .navbar_logo img {
@@ -364,7 +364,7 @@ input[type="button"]
     border-radius: 20px;
     background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
     border: 1px solid white;
-    box-shadow: 15px 15px 30px #dddedf;
+    box-shadow: 10px 15px 30px #dddedf;
     perspective-origin: 50% 50%;
     perspective: 400px;
 

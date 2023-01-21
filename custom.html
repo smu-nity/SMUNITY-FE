@@ -35,91 +35,77 @@
                 <input type="text" placeholder="학수번호"> <button class="custom_search_btn">검색</button>
             </form>
         </div>
-        <div class="my_box_grade">
+        <!-- 검색결과 -->
+        <div class="custom_search_result">
             <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                <!-- <div class="custom_form">
-                    <span style="font-weight: bold;">학수번호</span>
-                    <input type="text" id="s_num">
-                    <button class="custom_search_btn" onclick="ajax_conn()">검색</button>
-                </div> -->
-                <!-- 검색결과 박스 -->
-                <!-- <div class="result_zone">
-                    <div class="custom_subtitle">
-                        검색 결과
-                        <p style="color:rgb(199, 199, 199); font-size:0.9rem; font-weight: lighter; margin-top:0.4rem">
-                            학수번호를 검색해주세요.
-                        </p>
-                    </div> -->
-
-                    <!-- 여기가 검색시 결과를 띄워주는 div@!!!!! -->
-                    <div id="result_div"></div>
-                </div>
-
-                <!-- 기이수과목 결과 -->
-                <div style="margin-top:5rem;">
-                    <!-- -->
-                    <form action='/f_add_custom/' method='post' onclick='combine()'>
-                        {% csrf_token %}
-                        <div class="my_box_title">
-                            <div style="width: 10%;"></div>
-                            <div>내 기이수과목</div>
-                            <input type='submit' onclick='pop_modal()' class="save_btn" value='저장하기'>
-                        </div>
-                        <hr>
-                        <table id="mytable" class="grade_table" style='margin-bottom:3rem;'>
-                            <tr>
-                                <th class="grade_table_th" style="width:9%">년도</th>
-                                <th class="grade_table_th" style="width:9%">학기</th>
-                                <th class="grade_table_th" style="width:9%">학수번호</th>
-                                <th class="grade_table_th" style="width:36%">과목명</th>
-                                <th class="grade_table_th" style="width:9%">이수구분</th>
-                                <th class="grade_table_th" style="width:14%">선택영역</th>
-                                <th class="grade_table_th" style="width:6%;">학점</th>
-                                <th class="grade_table_th" style="width:6%; border-right :0px"></th>
-                            </tr>
-
-                            <!-- 커스텀 과목 먼저 띄우기 -->
-                            {% for cg in custom_grade %}
-                            <tr style='color : #1ac06d'>
-                                <td class="grade_table_td">{{ cg.year }}</td>
-                                <td class="grade_table_td">{{ cg.semester }}</td>
-                                <td class="grade_table_td">{{ cg.subject_num }}</td>
-                                <td class="grade_table_td">{{ cg.subject_name }}</td>
-                                <td class="grade_table_td">{{ cg.classification }}</td>
-                                <td class="grade_table_td">{{ cg.selection }}</td>
-                                <td class="grade_table_td">{{ cg.grade | floatformat }}</td>
-                                <td class="grade_table_td" style="border-right :0px">
-                                    <button class='del_btn' onclick='del_row_old(this)'>삭제</button>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                            {% for g in grade %}
-                            <tr>
-                                <td class="grade_table_td">{{ g.year }}</td>
-                                <td class="grade_table_td">{{ g.semester }}</td>
-                                <td class="grade_table_td">{{ g.subject_num }}</td>
-                                <td class="grade_table_td">{{ g.subject_name }}</td>
-                                <td class="grade_table_td">{{ g.classification }}</td>
-                                <td class="grade_table_td">{{ g.selection }}</td>
-                                <td class="grade_table_td">{{ g.grade | floatformat }}</td>
-                                <td class="grade_table_td" style="border-right :0px"></td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                        <!-- 추가된 과목정보 + 삭제된 과목 정보를 묶어서 보내주는 숨겨진 input-->
-                        <input type='hidden' id='id_year' name='arr_year' value=''>
-                        <input type='hidden' id='id_semester' name='arr_semester' value=''>
-                        <input type='hidden' id='id_subject_num' name='arr_subject_num' value=''>
-                        <input type='hidden' id='id_subject_name' name='arr_subject_name' value=''>
-                        <input type='hidden' id='id_classification' name='arr_classification' value=''>
-                        <input type='hidden' id='id_selection' name='arr_selection' value=''>
-                        <input type='hidden' id='id_grade' name='arr_grade' value=''>
-                        <input type='hidden' id='id_delete' name='arr_delete' value=''>
-                    </form>
-                </div>
+                <div id="result_div"></div>
+                검색 결과
             </div>
         </div>
+        <!-- 기이수과목 결과 -->
+        <div style="margin-top:5rem;">
+            <!-- -->
+            <form action='/f_add_custom/' method='post' onclick='combine()'>
+                {% csrf_token %}
+                <div class="my_box_title">
+                    <div style="width: 10%;"></div>
+                    <div>내 기이수과목</div>
+                    <input type='submit' onclick='pop_modal()' class="save_btn" value='저장하기'>
+                </div>
+                <hr>
+                <table id="mytable" class="grade_table" style='margin-bottom:3rem;'>
+                    <tr>
+                        <th class="grade_table_th" style="width:9%">년도</th>
+                        <th class="grade_table_th" style="width:9%">학기</th>
+                        <th class="grade_table_th" style="width:9%">학수번호</th>
+                        <th class="grade_table_th" style="width:36%">과목명</th>
+                        <th class="grade_table_th" style="width:9%">이수구분</th>
+                        <th class="grade_table_th" style="width:14%">선택영역</th>
+                        <th class="grade_table_th" style="width:6%;">학점</th>
+                        <th class="grade_table_th" style="width:6%; border-right :0px"></th>
+                    </tr>
+                    <!-- 커스텀 과목 먼저 띄우기 -->
+                    {% for cg in custom_grade %}
+                    <tr style='color : #1ac06d'>
+                        <td class="grade_table_td">{{ cg.year }}</td>
+                        <td class="grade_table_td">{{ cg.semester }}</td>
+                        <td class="grade_table_td">{{ cg.subject_num }}</td>
+                        <td class="grade_table_td">{{ cg.subject_name }}</td>
+                        <td class="grade_table_td">{{ cg.classification }}</td>
+                        <td class="grade_table_td">{{ cg.selection }}</td>
+                        <td class="grade_table_td">{{ cg.grade | floatformat }}</td>
+                        <td class="grade_table_td" style="border-right :0px">
+                            <button class='del_btn' onclick='del_row_old(this)'>삭제</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    {% for g in grade %}
+                    <tr>
+                        <td class="grade_table_td">{{ g.year }}</td>
+                        <td class="grade_table_td">{{ g.semester }}</td>
+                        <td class="grade_table_td">{{ g.subject_num }}</td>
+                        <td class="grade_table_td">{{ g.subject_name }}</td>
+                        <td class="grade_table_td">{{ g.classification }}</td>
+                        <td class="grade_table_td">{{ g.selection }}</td>
+                        <td class="grade_table_td">{{ g.grade | floatformat }}</td>
+                        <td class="grade_table_td" style="border-right :0px"></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <!-- 추가된 과목정보 + 삭제된 과목 정보를 묶어서 보내주는 숨겨진 input-->
+                <input type='hidden' id='id_year' name='arr_year' value=''>
+                <input type='hidden' id='id_semester' name='arr_semester' value=''>
+                <input type='hidden' id='id_subject_num' name='arr_subject_num' value=''>
+                <input type='hidden' id='id_subject_name' name='arr_subject_name' value=''>
+                <input type='hidden' id='id_classification' name='arr_classification' value=''>
+                <input type='hidden' id='id_selection' name='arr_selection' value=''>
+                <input type='hidden' id='id_grade' name='arr_grade' value=''>
+                <input type='hidden' id='id_delete' name='arr_delete' value=''>
+            </form>
+        </div>
     </div>
+
+    <!-- 모달 -->
     <div id='load_madal' class="modal">
         <div class="load-modal-content">
             <div class="modal_loadcontainer">

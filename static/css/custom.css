@@ -116,16 +116,17 @@
     font-family: inherit;
     width: 40%;
     outline: none;
-    background-color: #fff;
+    background-color: #F2F3F7;
     border-radius: 4px;
-    border: solid 2px black;
     display: block;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 5px 5px 10px 2  px #dddedf inset;
     font-size: 17px;
+    letter-spacing: 2px;
     color: #4A4A4A;
     text-indent: 40px;
+    border: none;
 
-    background-image: url(/static/img/hashtag-solid.svg);
+    background-image: url(/static/img/magnifying-glass-solid.svg);
     background-size: 6%;
     background-position: left;
     background-position-x: 23px;
@@ -133,7 +134,7 @@
     /* opacity: 0.6; */
 
     font-size: 1rem;
-    border: 0.5px solid black;
+    /* border: 0.5px solid black; */
     padding: 10px 10px 10px 15px;
     outline: 0;
     height: 1.5rem;
@@ -178,8 +179,8 @@
 
 .custom_search_btn {
     background: #6188E8;
-    width: 60px ;
-    height: 40px;
+    width: 70px ;
+    /* height: 40px; */
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -189,6 +190,11 @@
     cursor: pointer;
     outline: 0;
     margin-left: 0.9rem;
+}
+
+.custom_search_result{
+    margin: 30px;
+    border: solid 1px gray;
 }
 
 .add_btn {
