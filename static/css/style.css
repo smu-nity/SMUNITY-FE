@@ -66,8 +66,8 @@ input[type="button"]
 
 .navbar_logo img {
     position: relative;
-    width: 110px;
-    height: 52px;
+    width: 140px;
+    height: 60px;
 }
 
 .navbar_menu {
@@ -329,7 +329,7 @@ input[type="button"]
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #E8E9ED;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
     padding-top : 1.5rem;
     padding-bottom : 6rem;
 }
@@ -350,9 +350,8 @@ input[type="button"]
     align-content: center;
     width: 100%;
     height: 100%;
-    background-color: #E8E9ED;
     max-width: 1500px;
-}
+}   
 
 .resultbox {
     display: flex;
@@ -360,25 +359,48 @@ input[type="button"]
     width: 600px;
     height: 300px;
     margin: 45px 35px 20px;
-    border-color: black;
     border-style: solid;
     border-width: 1px;
     border-radius: 20px;
-    background-color: #E8E9ED;
-    border: 10px solid #EBECF0;
-    box-shadow: 10px 10px 20px 20px #D4D5D8 ;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
     perspective-origin: 50% 50%;
     perspective: 400px;
 
     /* fade */
     display: inline-block;
-    background: none;
     padding: 10px;
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
 }
+
+.resultbox-main {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 300px;
+    margin: 45px 35px 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+
+    /* fade */
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
 
 /* fade */
 @keyframes fadein {
@@ -413,23 +435,23 @@ input[type="button"]
         opacity: 1;
     }
 }
-/* fade */
+
 /* piechart */
 .pie-chart {
     position: relative;
-    background-color: #dfe0e5;
+    background-color: #E8EBF2;
     /* display:inline-block; */
     width: 120px;
     height: 120px;
     border-radius: 50%;
     transition: 0.3s;
     margin-left: 15px;
-    box-shadow: 0px 0px 5px 4px #bebec0 inset;
+    box-shadow: 1px 1px 6px 4px #cacacc inset;
     display:flex;
     align-items: center;
     justify-content: center;
   }
-  .pie-chart1{
+  .pie-chart-color{
     width: 80%;
     height: 80%;
     border-radius: 50%;
@@ -437,8 +459,9 @@ input[type="button"]
     align-items: center;
     justify-content: center;
   }
+
   .pie-chart-inner{
-    background-color: #dfe0e5;
+    background-color: #E8EBF2;
     width: 83%;
     height: 83%;
     border-radius: 50%;
@@ -452,17 +475,16 @@ input[type="button"]
     border-radius: 50%;
     text-align:center; 
     line-height: 50px;
-    font-size:15px;
+    font-size:13px;
     font-weight: bold;
-    color: #6188E8;
+    color: #0066FF;
     font-weight: bold;
      transform: translate(-50%, -50%);
-     box-shadow: 0px 0px 5px 4px #bebec0;
+     box-shadow: 2px 2px 10px 4px #bebec0;
   }
   /* piechart */
 
 .result_name {
-    background-color: none;
     position: relative;
     padding: 15px;
     font-size: 25px;
@@ -472,6 +494,11 @@ input[type="button"]
     margin-left: 2rem;
     margin-top: 1.5rem;
     margin-right: 2rem;
+}
+
+.small{
+    font-size: 15px;
+    color: #888;
 }
 
 .result_container{
@@ -490,12 +517,15 @@ input[type="button"]
 }
 
 .result_content_number{
-    width: 140px;
     height: 100px;
     text-align: center;
-    color: #6188E8;
+    color:  #0066FF;
     font-size: 3rem;
     font-weight:bolder;
+}
+
+.rednumber{
+    color: #FA4747;
 }
 
 .result_content_info{

@@ -1,6 +1,81 @@
 
 
 /* ---------------------------------( custom )---------------------------------------- */
+.custom_content{
+    display: block;
+    margin: 0 50px 40px;
+    text-align: center;
+}
+
+.custom_box {
+    display: block;
+    width: 600px;
+    height: 170px;
+    margin: 40px 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+    text-align: center;
+
+    /* fade */
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+
+/* fade */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.custom_form{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+/* .custom_btn{
+    display: block;
+    margin-left: 40px;
+} */
 
 .caution_div {
     color: #d32f2f;
@@ -10,7 +85,7 @@
     text-align: center;
 }
 
-.custom_box_wrap {
+/* .custom_box_wrap {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -20,10 +95,10 @@
     margin-top: 1.5rem;
     padding-left: 12rem;
     padding-right: 12rem;
-}
+} */
 
 .custom_title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-top: 1rem;
     text-align: center;
@@ -37,26 +112,28 @@
     text-align: center;
 }
 
-.custom_box {
-    text-align: left;
-    width: 50em;
-    height: auto;
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    margin: 1rem 1rem 2rem;
-    border-bottom: 1px solid lightgray;
-    background-color: white;
-    font-size: 0.9rem;
-}
-
-.custom_form {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
 .custom_form input[type="text"] {
+    font-family: inherit;
+    width: 40%;
+    outline: none;
+    background-color: #fff;
+    border-radius: 4px;
+    border: solid 2px black;
+    display: block;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    font-size: 17px;
+    color: #4A4A4A;
+    text-indent: 40px;
+
+    background-image: url(/static/img/hashtag-solid.svg);
+    background-size: 6%;
+    background-position: left;
+    background-position-x: 23px;
+    background-repeat: no-repeat;
+    /* opacity: 0.6; */
+
     font-size: 1rem;
-    background: none;
-    border: 0.01px solid rgb(216, 216, 216);
+    border: 0.5px solid black;
     padding: 10px 10px 10px 15px;
     outline: 0;
     height: 1.5rem;
@@ -101,7 +178,7 @@
 
 .custom_search_btn {
     background: #6188E8;
-    width: 8%;
+    width: 60px ;
     height: 40px;
     color: white;
     font-size: 1rem;
@@ -111,7 +188,7 @@
     padding: 0.5rem;
     cursor: pointer;
     outline: 0;
-    margin-left: 0.8rem;
+    margin-left: 0.9rem;
 }
 
 .add_btn {

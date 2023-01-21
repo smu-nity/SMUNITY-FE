@@ -17,128 +17,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
+    <!-- 아이콘 참조 -->
+    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Please Graduate</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
-    <div class="white_sec">
-        <div class="custom_box_wrap">
-            <!-- 사용법 -->
-            <div>
-                <div class="custom_title">How to use</div>
-                <div class="custom_box">
-                    <p class="container" style="font-weight: bold; font-size: 1.2rem;">과목 추가</p>
-                    <p>1. 학수번호 칸에 해당하는 학수번호를 입력하고 검색합니다.</p>
-                    <p>2. 해당 과목에대한 년도,이수구분을 선택합니다.</p>
-                    <p>3. 변경 내용을 확인하고 저장하기를 누릅니다.</p>
-                    <p class="container" style="font-weight: bold; font-size: 1.2rem;">과목 삭제</p>
-                    <p>1. 삭제하고 싶은 과목의 옆에 '삭제'버튼을 클릭합니다.</p>
-                    <p>2. 변경 내용을 확인하고 저장하기를 누릅니다.</p>
-                    <div style="margin-top: 1.2rem;">
-                        <p><span class="caution">※ 주의 내용 ※</span></p>
-                        <p><span class="caution">※ 주의 내용 ※</span></p>
-                    </div>
+    <div class="custom_content">
+        <!-- 제목 -->
+        <div class="custom_title">과목 수정</div>
+        <!-- 사용법 -->
+        <div class="custom_title">사용 방법&nbsp; <i id="custom_info" class="fa-solid fa-circle-question"></i> </div>
+        <!-- 검색 -->
+        <div class="custom_box">
+            <div class="custom_title">과목 검색</div>
+            <form class="custom_form" action="post">
+                <input type="text" placeholder="학수번호"> <button class="custom_search_btn">검색</button>
+            </form>
+        </div>
+        <div class="my_box_grade">
+            <div style="padding:2.5rem 2.5rem 0 2.5rem">
+                <!-- <div class="custom_form">
+                    <span style="font-weight: bold;">학수번호</span>
+                    <input type="text" id="s_num">
+                    <button class="custom_search_btn" onclick="ajax_conn()">검색</button>
+                </div> -->
+                <!-- 검색결과 박스 -->
+                <!-- <div class="result_zone">
+                    <div class="custom_subtitle">
+                        검색 결과
+                        <p style="color:rgb(199, 199, 199); font-size:0.9rem; font-weight: lighter; margin-top:0.4rem">
+                            학수번호를 검색해주세요.
+                        </p>
+                    </div> -->
+
+                    <!-- 여기가 검색시 결과를 띄워주는 div@!!!!! -->
+                    <div id="result_div"></div>
+                </div>
+
+                <!-- 기이수과목 결과 -->
+                <div style="margin-top:5rem;">
+                    <!-- -->
+                    <form action='/f_add_custom/' method='post' onclick='combine()'>
+                        {% csrf_token %}
+                        <div class="my_box_title">
+                            <div style="width: 10%;"></div>
+                            <div>내 기이수과목</div>
+                            <input type='submit' onclick='pop_modal()' class="save_btn" value='저장하기'>
+                        </div>
+                        <hr>
+                        <table id="mytable" class="grade_table" style='margin-bottom:3rem;'>
+                            <tr>
+                                <th class="grade_table_th" style="width:9%">년도</th>
+                                <th class="grade_table_th" style="width:9%">학기</th>
+                                <th class="grade_table_th" style="width:9%">학수번호</th>
+                                <th class="grade_table_th" style="width:36%">과목명</th>
+                                <th class="grade_table_th" style="width:9%">이수구분</th>
+                                <th class="grade_table_th" style="width:14%">선택영역</th>
+                                <th class="grade_table_th" style="width:6%;">학점</th>
+                                <th class="grade_table_th" style="width:6%; border-right :0px"></th>
+                            </tr>
+
+                            <!-- 커스텀 과목 먼저 띄우기 -->
+                            {% for cg in custom_grade %}
+                            <tr style='color : #1ac06d'>
+                                <td class="grade_table_td">{{ cg.year }}</td>
+                                <td class="grade_table_td">{{ cg.semester }}</td>
+                                <td class="grade_table_td">{{ cg.subject_num }}</td>
+                                <td class="grade_table_td">{{ cg.subject_name }}</td>
+                                <td class="grade_table_td">{{ cg.classification }}</td>
+                                <td class="grade_table_td">{{ cg.selection }}</td>
+                                <td class="grade_table_td">{{ cg.grade | floatformat }}</td>
+                                <td class="grade_table_td" style="border-right :0px">
+                                    <button class='del_btn' onclick='del_row_old(this)'>삭제</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% for g in grade %}
+                            <tr>
+                                <td class="grade_table_td">{{ g.year }}</td>
+                                <td class="grade_table_td">{{ g.semester }}</td>
+                                <td class="grade_table_td">{{ g.subject_num }}</td>
+                                <td class="grade_table_td">{{ g.subject_name }}</td>
+                                <td class="grade_table_td">{{ g.classification }}</td>
+                                <td class="grade_table_td">{{ g.selection }}</td>
+                                <td class="grade_table_td">{{ g.grade | floatformat }}</td>
+                                <td class="grade_table_td" style="border-right :0px"></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <!-- 추가된 과목정보 + 삭제된 과목 정보를 묶어서 보내주는 숨겨진 input-->
+                        <input type='hidden' id='id_year' name='arr_year' value=''>
+                        <input type='hidden' id='id_semester' name='arr_semester' value=''>
+                        <input type='hidden' id='id_subject_num' name='arr_subject_num' value=''>
+                        <input type='hidden' id='id_subject_name' name='arr_subject_name' value=''>
+                        <input type='hidden' id='id_classification' name='arr_classification' value=''>
+                        <input type='hidden' id='id_selection' name='arr_selection' value=''>
+                        <input type='hidden' id='id_grade' name='arr_grade' value=''>
+                        <input type='hidden' id='id_delete' name='arr_delete' value=''>
+                    </form>
                 </div>
             </div>
-            <!-- 검색 -->
-            <div>
-                <div>
-                    <div class="custom_title">학수번호 검색</div>
-                </div>
-                <div class="my_box_grade">
-                    <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                        <div class="custom_form">
-                            <span style="font-weight: bold;">학수번호</span>
-                            <input type="text" id="s_num">
-                            <button class="custom_search_btn" onclick="ajax_conn()">검색</button>
-                        </div>
-
-                        <!-- 검색결과 박스 -->
-                        <div class="result_zone">
-                            <div class="custom_subtitle">
-                                검색 결과
-                                <p
-                                    style="color:rgb(199, 199, 199); font-size:0.9rem; font-weight: lighter; margin-top:0.4rem">
-                                    학수번호를 검색해주세요.
-                                </p>
-                            </div>
-
-                            <!-- 여기가 검색시 결과를 띄워주는 div@!!!!! -->
-                            <div id="result_div"></div>
-                        </div>
-
-                        <!-- 기이수과목 결과 -->
-                        <div style="margin-top:5rem;">
-                            <!-- -->
-                            <form action='/f_add_custom/' method='post' onclick='combine()'>
-                                {% csrf_token %}
-                                <div class="my_box_title">
-                                    <div style="width: 10%;"></div>
-                                    <div>내 기이수과목</div>
-                                    <input type='submit' onclick='pop_modal()' class="save_btn" value='저장하기'>
-                                </div>
-                                <hr>
-                                <table id="mytable" class="grade_table" style='margin-bottom:3rem;'>
-                                    <tr>
-                                        <th class="grade_table_th" style="width:9%">년도</th>
-                                        <th class="grade_table_th" style="width:9%">학기</th>
-                                        <th class="grade_table_th" style="width:9%">학수번호</th>
-                                        <th class="grade_table_th" style="width:36%">과목명</th>
-                                        <th class="grade_table_th" style="width:9%">이수구분</th>
-                                        <th class="grade_table_th" style="width:14%">선택영역</th>
-                                        <th class="grade_table_th" style="width:6%;">학점</th>
-                                        <th class="grade_table_th" style="width:6%; border-right :0px"></th>
-                                    </tr>
-
-                                    <!-- 커스텀 과목 먼저 띄우기 -->
-                                    {% for cg in custom_grade %}
-                                    <tr style='color : #1ac06d'>
-                                        <td class="grade_table_td">{{ cg.year }}</td>
-                                        <td class="grade_table_td">{{ cg.semester }}</td>
-                                        <td class="grade_table_td">{{ cg.subject_num }}</td>
-                                        <td class="grade_table_td">{{ cg.subject_name }}</td>
-                                        <td class="grade_table_td">{{ cg.classification }}</td>
-                                        <td class="grade_table_td">{{ cg.selection }}</td>
-                                        <td class="grade_table_td">{{ cg.grade | floatformat }}</td>
-                                        <td class="grade_table_td" style="border-right :0px">
-                                            <button class='del_btn' onclick='del_row_old(this)'>삭제</button>
-                                        </td>
-                                    </tr>
-                                    {% endfor %}
-                                    {% for g in grade %}
-                                    <tr>
-                                        <td class="grade_table_td">{{ g.year }}</td>
-                                        <td class="grade_table_td">{{ g.semester }}</td>
-                                        <td class="grade_table_td">{{ g.subject_num }}</td>
-                                        <td class="grade_table_td">{{ g.subject_name }}</td>
-                                        <td class="grade_table_td">{{ g.classification }}</td>
-                                        <td class="grade_table_td">{{ g.selection }}</td>
-                                        <td class="grade_table_td">{{ g.grade | floatformat }}</td>
-                                        <td class="grade_table_td" style="border-right :0px"></td>
-                                    </tr>
-                                    {% endfor %}
-                                </table>
-                                <!-- 추가된 과목정보 + 삭제된 과목 정보를 묶어서 보내주는 숨겨진 input-->
-                                <input type='hidden' id='id_year' name='arr_year' value=''>
-                                <input type='hidden' id='id_semester' name='arr_semester' value=''>
-                                <input type='hidden' id='id_subject_num' name='arr_subject_num' value=''>
-                                <input type='hidden' id='id_subject_name' name='arr_subject_name' value=''>
-                                <input type='hidden' id='id_classification' name='arr_classification' value=''>
-                                <input type='hidden' id='id_selection' name='arr_selection' value=''>
-                                <input type='hidden' id='id_grade' name='arr_grade' value=''>
-                                <input type='hidden' id='id_delete' name='arr_delete' value=''>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
     </div>
-    </div>
-
-
     <div id='load_madal' class="modal">
         <div class="load-modal-content">
             <div class="modal_loadcontainer">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
-    <link rel="icon" href="static/img/logo.jpg">
+    <link rel="icon" href="static/img/favicon.ico">
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -24,56 +24,11 @@
     <div include-html="reference/navbar.html"></div>
 
     <div class="lcontainer">
-
-        <!-- 총학점
-        <div class="fcontainer">
-            <div class="resultbox container0">
-                <div class="name name0">
-                    Total
-                </div>
-                <div class="box">
-                    <div class="chart_box" id="chart0">
-                        <strong class="total_strong"></strong>
-                    </div>
-                    <div class="Sbox">
-                        <div class="gbox total_gbox">
-                            <span class="grade Grade">학번</span>
-                            <span class="t" id="studentnumber">201911019</span>
-                        </div>
-                        <div class="gbox total_gbox">
-                            <span class="grade Grade">이름</span>
-                            <span class="t" id="name">최현민</span>
-                        </div>
-                        <div class="gbox total_gbox">
-                            <span class="grade Grade">총 기준 학점
-                            </span>
-                            <span class="t" id="totalgrade">130</span>
-                        </div>
-                        <div>
-                            <div class="gbox total_gbox">
-                                <span class="grade Grade">총 이수 학점
-                                </span>
-
-                                <span class="t" id="mytotalgrade">132</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="gbox Gbox total_gbox">
-                                <span class="cap"><i class="fas fa-graduation-cap"></i></span>
-
-                                <div class="T" id="cangraduate"> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <div class="rcontainer">
-            <!-- 내 상태 -->
-            <div class="resultbox">
+            <!-- 내 학점 -->
+            <div class="resultbox-main">
                 <div class="result_name">
-                    내 학점 <a href="/custom.html" title="내 기이수과목 수정"><span style="float: right;"><i class="fa-solid fa-circle-plus"></i></span></a>
+                    <i class="fa-solid fa-user"></i> &nbsp;내 학점 &emsp;<span class="small">201911022 &nbsp;호세헌</span> <a href="/custom.html" title="내 기이수과목 수정"><span style="float: right;"><i class="fa-solid fa-circle-plus"></i></span></a>
                 </div>
                 <div class="result_container">
                     <div class="result_content">
@@ -85,12 +40,20 @@
                         <div class="result_content_info">총 이수 학점</div>
                     </div>
                     <div class="result_content">
-                        <div class="result_content_number count" data-count="50" style="color: #e89292;">0</div>
+                        <div class="result_content_number count" data-count="34">0</div>
+                        <div class="result_content_info">교양</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number count" data-count="52" style="border-right: 2px solid lightgray;">0</div>
+                        <div class="result_content_info">전공</div>
+                    </div>
+                    <div class="result_content">
+                        <div class="result_content_number count rednumber" data-count="50">0</div>
                         <div class="result_content_info" >필요 학점</div>
                     </div>
                     <div class="result_content">
                         <div class="pie-chart">
-                            <div class="pie-chart1">
+                            <div class="pie-chart-color pie-chart1">
                                 <div class="pie-chart-inner">
                                     <span class="center percent" percent="80"></span>
                                 </div>
@@ -104,7 +67,7 @@
             <!-- 교필 -->
             <div class="resultbox">
                 <div class="result_name">
-                    교필 <a href="/custom.html" title="내 기이수과목 수정"><span style="float: right;"></span></a>
+                    <i class="fa-solid fa-book-bookmark"></i> &nbsp;교필 <a href="/custom.html" title="내 기이수과목 수정"><span style="float: right;"></span></a>
                 </div>
                 <div class="result_container">
                     <div class="result_content">
@@ -116,25 +79,25 @@
                         <div class="result_content_info">총 이수 학점</div>
                     </div>
                     <div class="result_content">
-                        <div class="result_content_number count" data-count="50" style="color: #e89292;">0</div>
+                        <div class="result_content_number count rednumber" data-count="50">0</div>
                         <div class="result_content_info" >필요 학점</div>
                     </div>
                     <div class="result_content">
                         <div class="pie-chart">
-                            <div class="pie-chart1">
+                            <div class="pie-chart-color pie-chart2">
                                 <div class="pie-chart-inner">
-                                    <span class="center percent" percent="80"></span>
+                                    <span class="center percent" percent="50"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="test"></div>
             <!-- 교선 -->
             <div class="resultbox">
                 <div class="result_name">
-                    교선
+                    <i class="fa-solid fa-book-open"></i> &nbsp;  교선
                 </div>
                 <div class="result_container">
                     <div class="result_content">
@@ -146,14 +109,14 @@
                         <div class="result_content_info">총 이수 학점</div>
                     </div>
                     <div class="result_content">
-                        <div class="result_content_number count" data-count="50" style="color: #e89292;">0</div>
+                        <div class="result_content_number count rednumber" data-count="50">0</div>
                         <div class="result_content_info">필요 학점</div>
                     </div>
                     <div class="result_content">
                         <div class="pie-chart">
-                            <div class="pie-chart1">
+                            <div class="pie-chart-color pie-chart3">
                                 <div class="pie-chart-inner">
-                                    <span class="center percent" percent = "80"></span>
+                                    <span class="center percent" percent = "30"></span>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +127,7 @@
             <!-- 전공 -->
             <div class="resultbox">
                 <div class="result_name">
-                    전공
+                    <i class="fa-solid fa-pen-nib"></i> &nbsp; 전공
                 </div>
                 <div class="result_container">
                     <div class="result_content">
@@ -203,7 +166,7 @@
                         <div class="gbox" style="margin-top:-3rem">
                             <span class="grade" style="letter-spacing: -0.2px;">이수 학점</span>
                             <span class="r" id="my_grade_multi_ms"></span>
-                            <span class="tooltip" id="multi_remain" style="color:#d32f2f; margin-left:-0.5rem"></span>
+                            <span class="tooltip" id="multi_remain" style="color:#FF3333; margin-left:-0.5rem"></span>
                             <div class="tooltip_text">
                                 복필 영역에서 기준 학점 초과시 복선 학점으로 인정됩니다.
                                 연필 영역에서 기준 학점 초과시 연선 학점으로 인정됩니다.
