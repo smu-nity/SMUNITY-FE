@@ -25,14 +25,26 @@
     <div include-html="reference/navbar.html"></div>
     <div class="custom_content">
         <!-- 제목 -->
-        <div class="custom_title">과목 수정</div>
+        <!-- <div class="custom_title">과목 수정</div> -->
         <!-- 사용법 -->
-        <div class="custom_title">사용 방법&nbsp; <i id="custom_info" class="fa-solid fa-circle-question"></i> </div>
+        <div class="custom_title" style="margin-top: 100px;">사용 방법&nbsp; 
+            <i id="custom_info" class="fa-solid fa-circle-question"></i> 
+            <div id="custom_use" class="custom_use">
+                - 과목 추가 <br>
+                1. 과목 검색 박스 안의 검색 칸에 원하는 과목의 이름을 입력하고 검색을 누릅니다. <br>
+                2. 원하는 과목의 옵션을 선택하고 추가를 누릅니다 <br> <br>
+                - 과목 수정 <br>
+                1. 수정을 원하는 과목의 항목의 '수정'버튼을 누릅니다. <br>
+                2. 원하는 수정항목을 누르고 '완료'를 누릅니다. <br> <br>
+                - 과목 삭제 <br>
+                1. 삭제를 하고싶은 과목의 오른쪽에 '삭제'버튼을 누릅니다. <br>
+                </div>
+        </div>
         <!-- 검색 -->
         <div class="custom_box">
             <div class="custom_title">과목 검색</div>
             <form class="custom_form" action="post">
-                <input type="text" placeholder="학수번호"> <button class="custom_search_btn">검색</button>
+                <input type="text" placeholder="과목명"> <button class="custom_search_btn">검색</button>
             </form>
         </div>
         <!-- 검색결과 -->
@@ -138,6 +150,7 @@
 
     <div include-html="reference/footer.html"></div>
 </body>
+<script type="text/javascript" rel="javascript" src="/static/js/custom.js"></script>
 <script>
     includeHTML();
     function logout() {

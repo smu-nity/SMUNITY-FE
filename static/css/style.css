@@ -380,7 +380,7 @@ input[type="button"]
 .resultbox-main {
     display: flex;
     flex-direction: column;
-    width: 900px;
+    width: 880px;
     height: 300px;
     margin: 45px 35px 20px;
     border-style: solid;
@@ -436,6 +436,64 @@ input[type="button"]
     }
 }
 
+.fa-circle-plus{
+    position: relative;
+    left: 460px;
+}
+
+.result_info_icon{
+    margin-left: 15px;
+    align-self: right;
+}
+
+.result_info{
+    padding: 40px;
+    position:fixed;
+    left: 120px;
+    top: 100px;
+    display: none;
+    width: 400px;
+    height: 200px;
+    background-color: #F2F3F7;
+    border: 1px solid #d8d5d5;
+    box-shadow: 15px 15px 30px #888;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.recommend{
+    height: 35px;
+    width: 140px;
+    display: flex;
+    font-size: 15px;
+    font-weight:500;
+    border-radius: 10px;
+    border: 4px #bebec0;
+    background-color: #dddde0ed;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    left: 200px;
+    cursor: pointer;
+}
+
+.recommend {
+    box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+                6px 6px 10px rgba(0, 0, 0, .15);
+}
+
+.recommend:hover {
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+                2px 2px 4px rgba(0, 0, 0, .1);
+    background: rgb(229, 224, 224);
+}
+
+.recommend:active {
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+                inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
 /* piechart */
 .pie-chart {
     position: relative;
@@ -466,6 +524,7 @@ input[type="button"]
     height: 83%;
     border-radius: 50%;
   }
+
   span.center{
     background: #E8E9ED;
     /* display : block; */
@@ -485,6 +544,7 @@ input[type="button"]
   /* piechart */
 
 .result_name {
+    display: flex;
     position: relative;
     padding: 15px;
     font-size: 25px;
@@ -494,6 +554,7 @@ input[type="button"]
     margin-left: 2rem;
     margin-top: 1.5rem;
     margin-right: 2rem;
+    align-items: center;
 }
 
 .small{
@@ -534,20 +595,20 @@ input[type="button"]
     font-weight: bolder;
 }
 
-.box {
+/* .box {
     display: flex;
     flex-direction: row;
     background-color: none;
     justify-content: space-evenly; 
-    /* align-content: center;
-    align-items: center; */
+    align-content: center;
+    align-items: center;
     position: relative;
     width: 100%;
     border-radius: 30px;
-}
+} */
 
 
-.sbox {
+/* .sbox {
     margin: 0 -15px 0 0;
     padding: 0;
     display: flex;
@@ -563,9 +624,9 @@ input[type="button"]
     left: -22px;
     width: 180px;
     height: 220px;
-}
+} */
 
-.rbutton {
+/* .rbutton {
     width: 150px;
     position: relative;
     background-color: #444444;
@@ -580,11 +641,11 @@ input[type="button"]
     height: 40px;
     cursor: pointer;
     margin:10px 0 0 0;
-}
+} */
 
 
-.rbutton:hover {
-    background-color: white;
+/* .rbutton:hover { */
+    /* background-color: white;
     color: #272727;
 }
 
@@ -603,8 +664,8 @@ input[type="button"]
     letter-spacing: 2px;
     justify-content: space-around;
     flex-direction: row;
-}
-
+} */
+/* 
 .total_gbox{
     margin: 8px 8px 5px 8px;
 }
@@ -805,7 +866,7 @@ strong {
     border-radius: 5px;
     display: table-cell;
     vertical-align: middle;
-}
+} */
 
  
 /* ---------------------------------( 모달 )---------------------------------------- */
