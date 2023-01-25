@@ -473,8 +473,8 @@ input[type="button"]
     background-color: #dddde0ed;
     align-items: center;
     justify-content: center;
-    position:relative;
-    left: 200px;
+    position: absolute;
+    left: 380px;
     cursor: pointer;
 }
 
