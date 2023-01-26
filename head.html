@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
-    <link rel="stylesheet" href="static/css/style.css?date=0815">
+    <link rel="stylesheet" href="static/css/head.css">
     <link rel="icon" href="static/img/favicon.ico">
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
@@ -16,16 +17,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
+
     <title>Please Graduate</title>
 </head>
+
+
 <body>
-    <div include-html="reference/navbar.html"></div>
+
+<!-- 로고 / 메뉴바-->
+<header class="header">
+
+    <ul class="navbar_menu1">
+        <li>
+            <a href='/statistics/' style="color: white">꿀교양찾기</a>
+        </li>
+
+        <li>
+            <a href='https://forms.gle/f2vUqVg9wQFneBLf7' target="_blank" style="color: white">피드백하기</a>
+        </li>
+    </ul>
+
+    <div class="navbar_logo">
+        <a href="/"><img src="static/img/deer1.png"></a>
+    </div>
+
+    <ul class="navbar_menu2">
+    <!--            {% if request.session.id %}-->
+        <li>
+            <a href='/mypage/' style="color: white">마이페이지</a>
+        </li>
+    <!--            {% endif %}-->
+
+        <li>
+            <!-- 로그인 세션 활용 -->
+    <!--                {% if not request.session.id %}-->
+    <!--                <a href='/login/'>로그인</a>-->
+<!--            {% else %}-->
+            <a href='javascript:logout()' style="color: white">로그아웃</a>
+    <!--                {% endif %}-->
+        </li>
+    </ul>
+
+</header>
+
 
 <div class="bg_wrapper">
     <!-- 메인 -->
     <header class="main_bg">
         <!-- 소개 문구 -->
-        <div class="bg_text_btn" style="margin-top: 200px;">
+        <div class="bg_text_btn" style="margin-top: 250px;">
             <div class="bg_small_text fadein_text">
                 간편한 졸업요건 검사 사이트
             </div>
@@ -36,6 +76,7 @@
                 <button class="bg_btn_style" onclick="location.href='/mypage/'">검사하기</button>
             </div>
         </div>
+
         <!-- 방문자 + 검사횟수 -->
         <div class="num_visit">
             <div>
@@ -49,11 +90,12 @@
             </div>
         </div>
     </header>
+
 </div>
 
 
-    <div include-html="reference/footer.html"></div>
 </body>
+
 <script>
     includeHTML();
     function logout() {

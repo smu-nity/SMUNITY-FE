@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
+    <link rel="stylesheet" href="static/css/statistics.css">
     <link rel="icon" href="static/img/favicon.ico">
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
@@ -23,54 +24,32 @@
 
     <div class="gray_sec">
     <div class="container">
-        <div style="font-size:4rem;">
-            <i class="fas fa-graduation-cap"></i>
-        </div>
         <div class="big_title">꿀교양 찾기</div>
-        <div class="small_title">사용자 통계를 통해 꿀교양을 찾아보자!</div>
     </div>
 </div>
-
     <div class="white_sec">
-
-        <!-- 설명 박스 -->
-        <div class="statistics_user_box" style='margin-top: 4rem;'>
-            <div class='statistics_user_sub'>
-                필터링을 통해 다른 사용자들이 많이 듣는 교양 강의를 검색해보세요!
-            </div>
-            <div class="statistics_user_main">
-                현재
-                <span class='statistics_color_span'>25</span>개 학과/전공
-                <span class='statistics_color_span'>6312</span>명의 사용자 데이터를 참조합니다.
-            </div>
-        </div>
-
         <div class="custom_box_wrap">
             <!-- 검색창 박스 -->
             <div>
                 <div class="my_box_grade">
                     <!-- 필터링 박스 -->
-                    <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                        <!-- 상단 제목 -->
-                        <div class='filter_title'>
-                            📌 필터링
-                        </div>
-                        <!-- 구분 박스들 -->
+                <div style="padding:2.5rem 2.5rem 0 2.5rem">
+                    <!-- 상단 제목 -->
+                    <div class='filter_title'>
+                        📌 필터링
+                    </div>
                         <div class="filter_wrap">
                             <form method="post" id='filter_form' name='filter_form'>
                                 <!-- 내부 박스 -->
                                 <div class='filter_select_wrap'>
-
                                     <!-- 학점 박스 -->
                                     <div class='filter_select_div'>
                                         <div class='filter_select_title'>학점</div>
                                         <div class='filter_select_box'>
                                             <div class='filter_select_chk'>
-                                                <label>
-                                                    <input type="checkbox" name="grade[]" value="0.5" checked>
-                                                    <label></label>
-                                                    &nbsp;0.5 학점
-                                                </label>
+    
+                                                <label for="0.5grade"><img src="static/img/checker-on.svg" style="width: 8%; border: 1px solid black;"><input type="checkbox" id="0.5grade" name="grade[]" value="0.5" checked>&nbsp;0.5 학점</label>
+
                                                 <br>
                                                 <label>
                                                     <input type="checkbox" name="grade[]" value="1" checked>
@@ -155,11 +134,18 @@
                                 <input class='filter_btn' type="button" value="검색하기" onclick="ajax_get_data(); return false">
                             </form>
                         </div>
-
+                        <!-- 설명 박스 -->
+                        <div class="statistics_user_box" style='margin-top: 4rem;'>
+                            <div class='statistics_user_sub'>
+                                스뮤니티 사용자들의 교양 데이터를 사용 중입니다<br>
+                                    총 인원 : <span class="satatistics_user_info">8129</span>명 <br>
+                                    학과 : <span class="satatistics_user_info">43</span>개 <br>    
+                            </div>
+                        </div>
                         <!-- 결과 박스 -->
                         <div style="margin-top:5rem;">
                             <div class="filter_title">
-                                <div>📜 교양 순위</div>
+                                <div>순위</div>
                             </div>
                             <hr>
                             <!-- 여기에 테이블이 채워짐-->
@@ -232,10 +218,10 @@
                     update_div.innerHTML = html;
                 },
                 // 에러시 설정
-                error: function (err) {
-                    console.log(err)
-                    alert('데이터를 가져오는 데 에러가 발생했습니다!');
-                }
+                // error: function (err) {
+                //     console.log(err)
+                //     alert('데이터를 가져오는 데 에러가 발생했습니다!');
+                // }
             }
         );
     }
