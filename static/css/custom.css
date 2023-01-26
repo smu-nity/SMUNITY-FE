@@ -1,6 +1,96 @@
 
 
 /* ---------------------------------( custom )---------------------------------------- */
+.custom_content{
+    display: block;
+    margin: 0 50px 40px;
+    text-align: center;
+}
+
+.custom_use{
+    display: none;
+    width: 400px;
+    height: 140px;
+    border-radius: 10px;
+    background: #dddedf;
+    position: absolute;
+    left: 50%;
+    font-size: 13px;
+    padding: 50px;
+    font-weight: 400;
+    text-align: left;
+    z-index: 1;
+}
+
+.custom_box {
+    display: block;
+    width: 600px;
+    height: 190px;
+    margin: 30px 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+    text-align: center;
+
+    /* fade */
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+
+/* fade */
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.custom_form{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+/* .custom_btn{
+    display: block;
+    margin-left: 40px;
+} */
 
 .caution_div {
     color: #d32f2f;
@@ -10,7 +100,7 @@
     text-align: center;
 }
 
-.custom_box_wrap {
+/* .custom_box_wrap {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -20,12 +110,12 @@
     margin-top: 1.5rem;
     padding-left: 12rem;
     padding-right: 12rem;
-}
+} */
 
 .custom_title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
@@ -37,26 +127,29 @@
     text-align: center;
 }
 
-.custom_box {
-    text-align: left;
-    width: 50em;
-    height: auto;
-    padding: 1rem 2.5rem 1rem 2.5rem;
-    margin: 1rem 1rem 2rem;
-    border-bottom: 1px solid lightgray;
-    background-color: white;
-    font-size: 0.9rem;
-}
-
-.custom_form {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
 .custom_form input[type="text"] {
+    font-family: inherit;
+    width: 40%;
+    outline: none;
+    background-color: #feffff;
+    border-radius: 4px;
+    display: block;
+    box-shadow: 5px 5px 10px 5px #e6e7e8 inset;
+    font-size: 17px;
+    letter-spacing: 2px;
+    color: #4A4A4A;
+    text-indent: 40px;
+    border: none;
+
+    background-image: url(/static/img/magnifying-glass-solid.svg);
+    background-size: 6%;
+    background-position: left;
+    background-position-x: 23px;
+    background-repeat: no-repeat;
+    /* opacity: 0.6; */
+
     font-size: 1rem;
-    background: none;
-    border: 0.01px solid rgb(216, 216, 216);
+    /* border: 0.5px solid black; */
     padding: 10px 10px 10px 15px;
     outline: 0;
     height: 1.5rem;
@@ -101,32 +194,92 @@
 
 .custom_search_btn {
     background: #6188E8;
-    width: 8%;
-    height: 40px;
+    width: 70px;
+    /* height: 40px; */
     color: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 0.5rem;
     cursor: pointer;
     outline: 0;
-    margin-left: 0.8rem;
+    margin-left: 0.9rem;
 }
 
-.add_btn {
-    background: rgb(164, 26, 55);
-    width: 14%;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 3px;
-    padding: 0.6rem 0.5rem 0.6rem 0.5rem;
-    cursor: pointer;
-    outline: 0;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+.custom_search_btn {
+    box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+                6px 6px 10px rgba(0, 0, 0, .15);
+}
+
+.custom_search_btn:hover {
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
+                2px 2px 4px rgba(0, 0, 0, .1);
+    background: #7090e3;
+}
+
+.custom_search_btn:active {
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+                inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+#custom_modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 10%;
+}
+
+.search_result{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.custom_modal_title{
+    padding: 40px;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+}
+
+.custom_modal_content{
+    padding: 40px;
+    text-align: center;
+}
+
+.custom_search_result{
+    display: block;
+    width: 1200px;
+    margin: 30px 20px;
+    padding-bottom: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+    text-align: center;
+
+    /* fade */
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+.csutom_result_td{
+    border: 1px solid lightgray;
 }
 
 .del_btn {
@@ -140,18 +293,6 @@
 }
 
 .save_btn {
-    background: #6188E8;
-    width: 8%;
-    height: 40px;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    padding: 0.5rem;
-    cursor: pointer;
-    outline: 0;
-    margin-left: 0.8rem;
 }
 
 .caution{

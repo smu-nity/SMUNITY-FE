@@ -226,11 +226,14 @@ input[type=radio] {
     cursor: pointer;
 }
 
-/* 기본 체크박스 숨기기 */
 .chk_box input[type="checkbox"] { display: none; }
 
-/* 선택되지 않은 체크박스 스타일 꾸미기 */
-.on {
+.on.filter_select_chk input[type=checkbox] {
+    display: none;
+}
+
+.filter_select_chk input[type=checkbox] + label {
+    display:inline-block;
     width: 13px;
     height: 13px;
     border: 1px solid #000000;
@@ -245,4 +248,6 @@ input[type=radio] {
 background-image: url('../img/checker-on.svg');
 }
 
-
+.filter_select_chk input[type=checkbox]:checked + label {
+    background-image: url('../img/checker-on.svg');
+}
