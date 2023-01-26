@@ -69,42 +69,25 @@ input[type="button"]
 }
 
 .navbar_logo img {
-    width: 130px;
-    height: 60px;
+    width: 80px;
+    height: 72px;
     position: absolute;
-    top: 80%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.navbar_menu1 {
+
+.navbar_menu {
     display: inline-block;
     font-size: 20px;
     list-style: none;
-    padding-left: 1pc;
     padding-top: 1pc;
-    margin: 0;
-}
-
-.navbar_menu1 li {
-    margin-left: 3pc;
-    font-size: 19px;
-    padding: 8px 16px;
-    float: left;
-    cursor: pointer;
-}
-
-.navbar_menu2 {
-    padding-top: 1pc;
-    display: inline-block;
-    font-size: 20px;
-    list-style: none;
     padding-right: 4pc;
     margin: 0;
-
 }
 
-.navbar_menu2 li {
+.navbar_menu li {
     margin-left: 3pc;
     font-size: 19px;
     padding: 8px 16px;
@@ -112,8 +95,7 @@ input[type="button"]
     cursor: pointer;
 }
 
-.navbar_menu1 li a:hover,
-.navbar_menu2 li ha:over,
+.navbar_menu li a:hover,
 .regi_find_pwd a:hover
 {
     font-weight: bold;
@@ -146,8 +128,8 @@ input[type="button"]
     min-height:20rem;
     clear:right;
     float:right;
-    margin-top:5rem;
-    margin-right:3.0rem;
+    margin-top:18rem;
+    margin-right:3.5rem;
     text-align:center;
     color:white;
 }
@@ -167,32 +149,58 @@ input[type="button"]
 }
 
 .bg_btn_style{
-    font-weight:bold;
+
+    background: #313131;
     color:white;
-    font-size:1.2rem;
-    border-radius: 3px;
-    border:0;
-    background-color: #313131;
-    width:9rem;
+    border:none;
+    position:relative;
     height:3.5rem;
-    cursor: pointer;
+    width:11rem;
+    font-size:1.3em;
+    border-radius: 2px;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    font-weight:bold;
+    letter-spacing: 3px;
+
 }
 
 .bg_btn_style:hover{
-    background-color: white;
-    font-weight: bold;
-    color:black;
+  background: rgba( 255, 255, 255, 0.5 );
+  color: #003D91;
 }
+.bg_btn_style:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #003D91;
+  transition:400ms ease all;
+}
+.bg_btn_style:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.bg_btn_style:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
 
 .num_visit{
     color:rgb(207, 207, 207);
     font-size:0.9rem;
     font-weight: bold;
     letter-spacing:0.8px;
-    width:180px;
+    width:200px;
     clear:right;
     float:right;
-    margin-top:16.2rem;
+    margin-top:14rem;
     margin-right:0.5rem;
 }
 
