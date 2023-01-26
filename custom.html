@@ -19,7 +19,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
     <!-- 아이콘 참조 -->
     <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <title>Please Graduate</title>
+    <title>Smunity</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
@@ -32,37 +32,70 @@
             <div id="custom_use" class="custom_use">
                 - 과목 추가 <br>
                 1. 과목 검색 박스 안의 검색 칸에 원하는 과목의 이름을 입력하고 검색을 누릅니다. <br>
-                2. 원하는 과목의 옵션을 선택하고 추가를 누릅니다 <br> <br>
-                - 과목 수정 <br>
-                1. 수정을 원하는 과목의 항목의 '수정'버튼을 누릅니다. <br>
-                2. 원하는 수정항목을 누르고 '완료'를 누릅니다. <br> <br>
+                2. 원하는 과목의 옵션을 선택하고 추가를 누릅니다. <br> <br>
                 - 과목 삭제 <br>
                 1. 삭제를 하고싶은 과목의 오른쪽에 '삭제'버튼을 누릅니다. <br>
-                </div>
+                (자신이 추가한 과목만 삭제할 수 있습니다.)
+            </div>
         </div>
         <!-- 검색 -->
         <div class="custom_box">
             <div class="custom_title">과목 검색</div>
             <form class="custom_form" action="post">
-                <input type="text" placeholder="과목명"> <button class="custom_search_btn">검색</button>
+                <input name="custom_search" type="text" placeholder="과목명"> <button class="custom_search_btn" onclick="modal_open(this)" open="custom_modal">검색</button>
             </form>
         </div>
         <!-- 검색결과 -->
-        <div class="custom_search_result">
-            <div style="padding:2.5rem 2.5rem 0 2.5rem">
-                <div id="result_div"></div>
-                검색 결과
+        <div id="custom_modal">
+            <div class="custom_search_result">
+                <div class="custom_modal_content">
+                    <div class="custom_modal_title">
+                       <img src="/static/img/deericon.png" style="width: 30px; height: 30px; top: 10px;"> 검색 결과 <span class="close" onclick="modal_close(this)" close="custom_modal">&times;</span>
+                    </div>
+                    <div class="custom_modal_content">
+                        <table id="custom_search_result" class="search_result">
+                            <tr>
+                                <th class="grade_table_th" style="width:10%">년도</th>
+                                <th class="grade_table_th" style="width:12%">학기</th>
+                                <th class="grade_table_th" style="width:10%">학수번호</th>
+                                <th class="grade_table_th" style="width:36%">과목명</th>
+                                <th class="grade_table_th" style="width:10%">이수구분</th>
+                                <th class="grade_table_th" style="width:14%">선택영역</th>
+                                <th class="grade_table_th" style="width:8%;">학점</th>
+                                <th class="grade_table_th" style="width:8%; border-right :0px"></th>
+                            </tr>
+                            <!-- 결과 내용 -->
+                            {% for cg in custom_grade %}
+                            <tr>
+                                <td class="grade_table_td">2022</td>
+                                <td class="grade_table_td">2</td>
+                                <td class="grade_table_td">11031</td>
+                                <td class="grade_table_td">스뮤니티 과목</td>
+                                <td class="grade_table_td">전공</td>
+                                <td class="grade_table_td">전심</td>
+                                <td class="grade_table_td">3</td>
+                                <td class="grade_table_td" style="border-right :0px">
+                                <button class='custom_search_btn' onclick='custom_add(), modal_close(this)'>추가</button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- 기이수과목 결과 -->
+        <!-- 내 기이수과목 -->
         <div style="margin-top:5rem;">
             <!-- -->
             <form action='/f_add_custom/' method='post' onclick='combine()'>
                 {% csrf_token %}
                 <div class="my_box_title">
-                    <div style="width: 10%;"></div>
-                    <div>내 기이수과목</div>
-                    <input type='submit' onclick='pop_modal()' class="save_btn" value='저장하기'>
+                    <div style="font-size: 20px;">
+                        내 기이수과목
+                    </div> 
+                    <div style="text-align: right;">
+                        <input type='submit' onclick='pop_modal()' class="custom_search_btn save_btn" value='저장' s>
+                    </div>
                 </div>
                 <hr>
                 <table id="mytable" class="grade_table" style='margin-bottom:3rem;'>
@@ -87,7 +120,7 @@
                         <td class="grade_table_td">{{ cg.selection }}</td>
                         <td class="grade_table_td">{{ cg.grade | floatformat }}</td>
                         <td class="grade_table_td" style="border-right :0px">
-                            <button class='del_btn' onclick='del_row_old(this)'>삭제</button>
+                            <button class='custom_search_btn' onclick='del_row_old(this)'>삭제</button>
                         </td>
                     </tr>
                     {% endfor %}
@@ -147,7 +180,6 @@
             </div>
         </div>
     </div>
-
     <div include-html="reference/footer.html"></div>
 </body>
 <script type="text/javascript" rel="javascript" src="/static/js/custom.js"></script>
@@ -267,73 +299,7 @@
         div.innerHTML = html;
     }
 
-    function add_subject() {
-        // 만약 선택영역 선택안했으면 빠꾸
-        var ts_box = document.getElementById('classification');
-        var ts_ind = document.getElementById("classification").options.selectedIndex;
-        if (ts_box.options[ts_ind].value === "x") {
-            return alert('🤯 자신에게 맞는 이수구분을 선택해주세요');
-        }
-
-        // 0. 우선 검색결과 테이블에서 값을 다 긁어온다.
-        var year = document.getElementById('year').value;
-        var semester = document.getElementById('semester').value;
-        var subject_num = document.getElementById('subject_num').value;
-        var subject_name = document.getElementById('subject_name').value;
-        var classification = document.getElementById('classification').value;
-        var selection = document.getElementById('selection').value;
-        var grade = document.getElementById('grade').value;
-        //  만약 기이수과목표에 있는 학수번호를 추가하려 한다면?
-        var now_s_num_list = []
-        $('#mytable tr').each(
-            function(){
-                var inner_s_num = $(this).find('td').eq(2).text();
-                if(inner_s_num === ""){
-                    inner_s_num = $(this).find('td').eq(2).find('*').val();
-                }
-                now_s_num_list.push(inner_s_num)
-            }
-        );
-        if(now_s_num_list.includes(subject_num)){
-            // 전체 리스트에 들어있으면
-            return alert('🥵 이미 기이수과목표에 해당 학수번호가 존재합니다!');
-        }
-        // 1. 행생성
-        var table = document.getElementById('mytable');
-        var newRow = table.insertRow(1);
-        // 2. 행에 각각 셀 생성
-        var newCell0 = newRow.insertCell(0);  // 년도
-        var newCell1 = newRow.insertCell(1);  // 학기
-        var newCell2 = newRow.insertCell(2);  // 학수번호
-        var newCell3 = newRow.insertCell(3);  // 과목명
-        var newCell4 = newRow.insertCell(4);  // 이수구분
-        var newCell5 = newRow.insertCell(5);  // 선택영역
-        var newCell6 = newRow.insertCell(6);  // 학점
-        var newCell7 = newRow.insertCell(7);  // 삭제버튼
-        // 3. 각각의 셀에 클래스지정
-        newCell0.className = 'new_td';
-        newCell1.className = 'new_td';
-        newCell2.className = 'new_td';
-        newCell3.className = 'new_td';
-        newCell4.className = 'new_td';
-        newCell5.className = 'new_td';
-        newCell6.className = 'new_td';
-        newCell7.className = 'new_td';
-        // 4. 셀에 값 추가
-        newCell0.innerHTML = "<input class='new_td_input' type='text' name='year' value='" + year + "' readonly>";
-        newCell1.innerHTML = "<input class='new_td_input' type='text' name='semester' value='" + semester + "' readonly>";
-        newCell2.innerHTML = "<input class='new_td_input' type='text' name='subject_num' value='" + subject_num + "' readonly>";
-        newCell3.innerHTML = "<input class='new_td_input' type='text' name='subject_name' value='" + subject_name + "' readonly>";
-        newCell4.innerHTML = "<input class='new_td_input' type='text' name='classification' value='" + classification + "' readonly>";
-        newCell5.innerHTML = "<input class='new_td_input' type='text' name='selection' value='" + selection + "' readonly>";
-        newCell6.innerHTML = "<input class='new_td_input' type='text' name='grade' value='" + grade + "' readonly>";
-        newCell7.innerHTML = "<button class='del_btn' onclick='del_row_new(this)'>삭제</button>";
-        // 검색 결과창은 지워준다.
-        var s_num = document.querySelector('#s_num');
-        s_num.value = '';
-        var result_div = document.querySelector('#result_div');
-        result_div.innerHTML = "";
-    }
+    
 
     function del_row_new(obj) {
         // 테이블 불러오기

@@ -10,7 +10,7 @@
 .custom_use{
     display: none;
     width: 400px;
-    height: 200px;
+    height: 140px;
     border-radius: 10px;
     background: #dddedf;
     position: absolute;
@@ -223,24 +223,63 @@
                 inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
 
-.custom_search_result{
-    margin: 30px;
-    border: solid 1px gray;
+#custom_modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 10%;
 }
 
-.add_btn {
-    background: rgb(164, 26, 55);
-    width: 14%;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 3px;
-    padding: 0.6rem 0.5rem 0.6rem 0.5rem;
-    cursor: pointer;
-    outline: 0;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
+.search_result{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.custom_modal_title{
+    padding: 40px;
+    font-size: 20px;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+}
+
+.custom_modal_content{
+    padding: 40px;
+    text-align: center;
+}
+
+.custom_search_result{
+    display: block;
+    width: 1200px;
+    margin: 30px 20px;
+    padding-bottom: 40px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    background: linear-gradient(125deg,#E8EBF2,#F2F3F7);
+    border: 1px solid white;
+    box-shadow: 15px 15px 30px #dddedf;
+    perspective-origin: 50% 50%;
+    perspective: 400px;
+    text-align: center;
+
+    /* fade */
+    display: inline-block;
+    padding: 10px;
+    animation: fadein 1s;
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+    -o-animation: fadein 1s; /* Opera */
+}
+
+.csutom_result_td{
+    border: 1px solid lightgray;
 }
 
 .del_btn {
@@ -254,7 +293,7 @@
 }
 
 .save_btn {
-    background: #6188E8;
+    /* background: #6188E8;
     width: 8%;
     height: 40px;
     color: white;
@@ -266,6 +305,8 @@
     cursor: pointer;
     outline: 0;
     margin-left: 0.8rem;
+    position: relative;
+    left: 400px; */
 }
 
 .caution{

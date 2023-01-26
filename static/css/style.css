@@ -595,7 +595,7 @@ input[type="button"]
     font-weight: bolder;
 }
 
-/* .box {
+.box {
     display: flex;
     flex-direction: row;
     background-color: none;
@@ -644,8 +644,8 @@ input[type="button"]
 } */
 
 
-/* .rbutton:hover { */
-    /* background-color: white;
+.rbutton:hover {
+    background-color: white;
     color: #272727;
 }
 
@@ -664,8 +664,8 @@ input[type="button"]
     letter-spacing: 2px;
     justify-content: space-around;
     flex-direction: row;
-} */
-/* 
+} 
+
 .total_gbox{
     margin: 8px 8px 5px 8px;
 }
@@ -866,7 +866,7 @@ strong {
     border-radius: 5px;
     display: table-cell;
     vertical-align: middle;
-} */
+}
 
  
 /* ---------------------------------( 모달 )---------------------------------------- */
