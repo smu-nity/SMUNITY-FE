@@ -38,7 +38,7 @@ input[type="button"]
 }
 
 .white_sec{
-    background-color: white;
+   background-color: white;
     padding-bottom: 1rem;
 }
 
@@ -59,7 +59,7 @@ input[type="button"]
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom : 0.001px solid rgb(216, 216, 216);
+
     background-color: white;
     padding: 10px;
 }

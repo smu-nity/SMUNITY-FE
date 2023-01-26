@@ -145,7 +145,6 @@ input[type="button"]
     text-align: left;
     display: inline-block;
     margin: 0 auto;
-    line-height: 2.2rem;
 }
 
 .filter_select_chk label{
@@ -218,7 +217,18 @@ input[type=radio] {
 }
 
 
-.filter_select_chk input[type=checkbox] {
+.chk_box {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.chk_box input[type="checkbox"] { display: none; }
+
+.on.filter_select_chk input[type=checkbox] {
     display: none;
 }
 
@@ -227,7 +237,15 @@ input[type=radio] {
     width: 13px;
     height: 13px;
     border: 1px solid #000000;
-    cursor:pointer;
+    position: absolute;
+    cursor : pointer;
+    top: 5.5px;
+    left: 0;
+}
+
+/* 선택된 체크박스 스타일 꾸미기 */
+.chk_box input[type="checkbox"]:checked + .on {
+background-image: url('../img/checker-on.svg');
 }
 
 .filter_select_chk input[type=checkbox]:checked + label {

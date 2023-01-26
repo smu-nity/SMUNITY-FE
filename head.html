@@ -27,21 +27,15 @@
 <!-- 로고 / 메뉴바-->
 <header class="header">
 
-    <ul class="navbar_menu1">
-        <li>
-            <a href='/statistics/' style="color: white">꿀교양찾기</a>
-        </li>
-
-        <li>
-            <a href='https://forms.gle/f2vUqVg9wQFneBLf7' target="_blank" style="color: white">피드백하기</a>
-        </li>
-    </ul>
-
     <div class="navbar_logo">
         <a href="/"><img src="static/img/deer1.png"></a>
     </div>
 
-    <ul class="navbar_menu2">
+    <ul class="navbar_menu">
+        <li>
+            <a href='https://forms.gle/f2vUqVg9wQFneBLf7' target="_blank" style="color: white">피드백하기</a>
+        </li>
+
     <!--            {% if request.session.id %}-->
         <li>
             <a href='/mypage/' style="color: white">마이페이지</a>
@@ -65,12 +59,12 @@
     <!-- 메인 -->
     <header class="main_bg">
         <!-- 소개 문구 -->
-        <div class="bg_text_btn" style="margin-top: 250px;">
-            <div class="bg_small_text fadein_text">
-                간편한 졸업요건 검사 사이트
+        <div class="bg_text_btn">
+            <div class="bg_small_text fadein_text" style="letter-spacing:1px;">
+                상명대 졸업요건 검사 사이트
             </div>
-            <div class="bg_big_text fadein_text">
-                Please Graduate
+            <div class="bg_big_text fadein_text" style="letter-spacing:8px;">
+                SMUNITY
             </div>
             <div class="bg_btn">
                 <button class="bg_btn_style" onclick="location.href='/mypage/'">검사하기</button>
@@ -80,19 +74,20 @@
         <!-- 방문자 + 검사횟수 -->
         <div class="num_visit">
             <div>
-                <i class="fas fa-calendar-day"></i>&nbsp;&nbsp;오늘 방문자 수 : 322
+                <i class="fas fa-calendar-day"></i>&nbsp;&nbsp;오늘 방문자 수 : 322 명
             </div>
             <div style="margin-top:0.4rem;">
-                <i class="fas fa-mouse" style="margin-right:0.1rem;"></i>&nbsp;&nbsp;총 방문자 수 : 35213
+                <i class="fas fa-mouse" style="margin-right:0.1rem;"></i>&nbsp;&nbsp;총 방문자 수 : 35213 명
             </div>
             <div style="margin-top:0.4rem;">
-                <i class="fas fa-user"></i>&nbsp;&nbsp;총 회원 수 : 6392
+                <i class="fas fa-user"></i>&nbsp;&nbsp;총 회원 수 : 6392 명
             </div>
         </div>
     </header>
 
 </div>
 
+<div include-html="reference/footer.html"></div>
 
 </body>
 

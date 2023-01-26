@@ -18,7 +18,7 @@
 }
 
 .go_result_btn{
-    background: rgb(164, 26, 55);
+    background: #6188E8;
     color: white;
     font-size: 1rem;
     font-weight: bold;
@@ -33,8 +33,7 @@
 
 .my_box_wrap{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    position : relative;
     align-content: center;
     margin-top:1.5rem;
     padding-left : 12rem;
@@ -44,8 +43,8 @@
 .my_box{
     display: flex;
     flex-direction: column;
-    width: 28rem;
-    height: 18rem;
+    width: 20rem;
+    height: 23.5rem;
     padding:2.5rem;
     margin: 1rem 1rem 1rem;
     border:1px solid rgb(216, 216, 216);
