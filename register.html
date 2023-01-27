@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
+<<<<<<< Updated upstream
     <link rel="icon" href="static/img/favicon.ico">
+=======
+    <link rel="stylesheet" href="static/css/register.css">
+    <link rel="icon" href="static/img/deericon.png">
+>>>>>>> Stashed changes
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -16,82 +21,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
-    <title>Please Graduate</title>
+    <!--아이콘-->
+    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"></link>
+
+    <title>Smunity</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
-
     <div class="white_sec">
-    <div class="container">
-        <form action="/f_register/" method="post" name='regi_form' onsubmit="return check_up()">
-            <div class="regi_box" style="width:400px">
-
-                <label>이름</label>
-                <input type="text" name="name" placeholder="최현민" style="background-color:rgb(248,249,250);" disabled>
-
-                <label>학과</label>
-                <input type="text" name="major" placeholder="컴퓨터과학과" style="background-color:rgb(248,249,250);" disabled>
-
-                <!-- 학부일 경우엔 선택지 주기 (1학년 학부생에게만 해당함. )-->
-                <select id="major_select" name="major_select">
-                    <option value="x" selected>-- 선택(필수) --</option>
-                    <option value="{{ ms }}">{{ ms }}</option>
-                </select>
-                <div class='regi_guide'>
-                    * 전공이 정해지지 않은 경우 희망 전공을 선택하세요
+        <div class="container">
+            <form action="head.html" method="post" onsubmit="return validation2()">
+                <div class="regi_box" >
+                    <div class="regi_small_box">
+                        <label>스뮤니티 회원가입</label>
+                        <!--이름-->
+                        <input type="text" name="name" placeholder="{{request.session.temp_user_name}}}" style="font-weight:bold;" disabled>
+                        <!--학번-->
+                        <input type="text" name="student_id" placeholder=' {{ request.session.temp_user_info.id }}' style="font-weight:bold;" disabled >
+                        <!--학과-->
+                        <input type="text" name="major" placeholder="{{request.session.temp_user_major}}" style="font-weight:bold;" disabled >
+                        <!--이메일-->
+                        <input type="email" name="email" placeholder="{{request.session.temp_user_email}}" style="font-weight:bold;" disabled >
+                        <!--전공상태-->
+                        <select id="major_status" name="major_status">
+                            <option value="전공상태" selected block>전공상태</option>
+                            <option value="제2전공">제2전공</option>
+                            <option value="연계/융합전공">연계/융합전공</option>
+                            <option value="자기설계융합전공">자기설계융합전공</option>
+                            <option value="부전공">부전공</option>
+                            <option value="심화전공">심화전공</option>
+                            <option value="SM-CDR나비오름">SM-CDR나비오름</option>
+                        </select>
+                        <!--공학인증-->
+                            <select id="engineering_certf" name="engineering_certf">
+                                <option value="공학인증" selected>공학인증</option>
+                                <option value="예">예</option>
+                                <option value="아니오">아니오</option>
+                            </select>
+                        <!--비밀번호-->
+                            <input class="gray_placehoder" id="pw" type="password" placeholder = "비밀번호" >
+                            <!--<i class="fa-solid fa-eye"></i>-->
+                            </input>
+                        <!--비밀번호 재확인-->
+                            <input class="gray_placehoder" id="pw2" type="password" placeholder = "비밀번호 재확인"></input>
+                            <input type='submit' class='regi_btn'  value='가입하기'></input>
+                    </div>
                 </div>
-
-                <label>학번</label>
-                <input type="text" name="student_id" placeholder='{{ request.session.temp_user_info.id }}' style="background-color:rgb(248,249,250);" disabled>
-
-                <label>전공상태</label>
-                <select name="major_status">
-                    <option value="해당없음" selected>해당없음</option>
-                    <option value="복수전공">복수전공</option>
-                    <option value="연계전공">연계·융합전공</option>
-                </select>
-
-                <label>영어인증</label>
-                    <select onclick="pop_score()" id="eng" name="eng">
-                        <option value="해당없음" selected>해당없음</option>
-                        <option value="TOEIC">TOEIC</option>
-                        <option value="TOEFL">TOEFL</option>
-                        <option value="TEPS">TEPS</option>
-                        <option value="New_TEPS">New TEPS</option>
-                        <option value="OPIc">OPIc</option>
-                        <option value="TOEIC_Speaking">TOEIC Speaking</option>
-                        <option value="초과학기면제">초과학기 2학기이상 면제</option>
-                    </select>
-                    <!-- 숨겨져있는 애들 -->
-                    <input id="eng_score" style="display:none" type="number" name="eng_score" placeholder='점수'>
-                    <select id="opic" name="opic" style="display:none">
-                        <option value="NL" selected>Novice Low</option>
-                        <option value="NM">Novice Mid</option>
-                        <option value="NH">Novice High</option>
-                        <option value="IL">Intermediate Low</option>
-                        <option value="IM">Intermediate Mid</option>
-                        <option value="IH">Intermediate High</option>
-                        <option value="AL">Advanced Low</option>
-                    </select>
-                    <select id="eng" name="eng">
-                        <option value="영어인증면제학과" selected>영어인증 면제학과</option>
-                    </select>
-
-                <label>비밀번호</label>
-                <input id="pw1" type="password" name="password">
-                <div class='regi_guide'>
-                    * Please Graduate 사이트의 고유 비밀번호를 설정해주세요
-                </div>
-                <label>비밀번호 재확인</label>
-                <input id="pw2" type="password">
-            </div>
-            <input type='submit' class='regi_btn' value='가입하기'>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
 
     <div include-html="reference/footer.html"></div>
 </body>
+<script type="text/javascript" rel="javascript" src="/static/js/register.js"></script>
 <script>
     includeHTML();
     function logout() {

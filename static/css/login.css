@@ -1,0 +1,190 @@
+/* ---------------------------------( login  )---------------------------------------- */
+.login-container{
+    display: flex;
+    background: linear-gradient(125deg, white, #E8E9ED);
+    justify-content: center;
+}
+
+.login_logo {
+    display: flex;
+    justify-content: center;
+}
+
+#login_logo {
+    margin-top: 40px;
+    width: 180px;
+    height: 180px;
+}
+
+.login_gray {
+    color: #747474;
+    font-size: 14px;
+}
+
+.login_content{
+    padding: 35px;
+    text-align: center;
+}
+
+.login_title{
+    text-align: center;    
+    padding-top:2rem;
+    padding-left:0.5rem;
+    font-weight: bold;
+}
+
+.textbox{
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.textbox label{
+    text-align: center;
+    font-size:1.1rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.textbox input {
+    font-size: 1rem;
+    background: none;
+    border:0.01px solid rgb(216, 216, 216);
+    padding: 10px 10px 10px 15px;
+    margin-top:0.5rem;
+    outline: 0;
+    height:1.5rem;
+}
+
+.textbox a {
+    font-size: 0.6rem;
+    text-align: right;
+    text-decoration: none;
+    color: #313131;
+
+}
+
+.login_btn {
+    background: #003D91;
+    width:17%;
+    color: white;
+    font-size: 1.0rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    padding:0.5rem;
+    cursor: pointer;
+    outline: 0;
+    margin: 10px;
+    margin-top: 2rem;
+}
+
+
+.login-form {
+    background: #fff;
+    width: 500px;
+    margin: 65px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 15px 15px 20px 10px #bebec0;
+    justify-content: center;
+    text-align: center;
+  }
+  .login-form h1 {
+    font-weight: 300;
+    text-align: center;
+  }
+  .login-form .content {
+    padding: 45px;
+    text-align: center;
+  }
+  .login-form .input-field {
+    padding: 12px 5px;
+  }
+  .login-form .input-field input {
+    font-size: 16px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+    padding: 10px 1px;
+    border: 0;
+    border-bottom: 1px solid #747474;
+    outline: none;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    text-indent: 10px;
+    letter-spacing: 3px;
+  }
+  
+  .login-form .input-field input::-webkit-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::-moz-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input:-ms-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::-ms-input-placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input::placeholder {
+    text-transform: uppercase;
+  }
+  .login-form .input-field input:focus {
+    border-color: #222;
+  }
+  .login-form a.link {
+    text-decoration: none;
+    color: #747474;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+  .login-form a.link:hover {
+    text-decoration: underline;
+  }
+  .login-form .action {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: row;
+  }
+  .login-form .action button{
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    text-transform: uppercase;
+    background: #e8e9ec;
+    color: #777;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    letter-spacing: 0.2px;
+    outline: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+  }
+  .login-form .action button:hover {
+    background: #d8d8d8;
+  }
+  .login-form .action button:nth-child(2) {
+    background: #6188E8;
+    color: #fff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 4px;
+  }
+  .login-form .action button:nth-child(2):hover {
+    background: #003D91;
+  }

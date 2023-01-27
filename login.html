@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280">
     <link rel="stylesheet" href="static/css/style.css?date=0815">
+
     <link rel="icon" href="static/img/favicon.ico">
+
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="icon" href="static/img/deericon.png">
+
     <!-- 웹 참조-->
     <script src="//code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -16,48 +21,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
-    <title>Please Graduate</title>
+    <!--아이콘-->
+    <link rel= "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css%22%3E%22%3E"></link>
+
+    <title>Smunity</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
-
-    <!-- 처음 타이틀 -->
-    <div class="gray_sec">
-        <div class="container">
-            <div style="font-size:4rem;">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="big_title">Please Graduate에 오신걸 환영합니다</div>
-            <div class="small_title">version 2.3.1</div>
-        </div>
-    </div>
-
     <!-- 로그인 박스 -->
-    <div class="white_sec">
-        <div class="container">
-            <div class="login_title" style="font-size:2rem; padding-top:3rem;">로그인</div>
-            <div style="margin-top:0.5rem; font-size:1rem; color:rgb(199, 199, 199)">
-                학번과 Please Graduate 사이트의 비밀번호를 입력해주세요.
+    <div class="login-container">
+        <div class="login-form">
+            <form action="head.html" method="post">
+            <div class="login_logo">
+                <img id="login_logo" src="static/img/deericon.png" >
             </div>
-            <div class="login_box">
-                <!-- 로그인 폼 -->
-                <form action="/f_login/" method="post" onsubmit="return check_up1()">
-                    <div class="textbox">
-                        <label>아이디</label>
-                        <input type="text" id="id" name="id" placeholder="ID">
-                        <label>비밀번호</label>
-                        <input type="password" id="pw" name="pw" placeholder="PASSWORD">
-                    </div>
-                    <div id="">
-                        <input type='submit' class='login_btn' value='로그인'>
-                    </div>
-                    <div class="regi_find_pwd">
-                        <a href="/agree/">회원가입</a>
-                        <span>|</span>
-                        <a id="b2" href="#">비밀번호찾기</a>
-                    </div>
-                </form>
-            </div>
+
+                <!-- { % csrf_token %} -->
+                <h1>로그인</h1>
+                <span class="login_gray">학번과 스뮤니티 비밀번호를 입력해 주세요.</span>
+                <div class="content">
+                <div class="input-field">
+                    <input id="id" type="text" placeholder="학번" autocomplete="nope">
+                </div>
+                <div class="input-field">
+                    <input id="pw" type="password" placeholder="비밀번호" autocomplete="new-password">
+                </div>
+                <a href="changePassword.html" class="link">비밀번호를 잊어버리셨나요?</a>
+                </div>
+                <div class="action">
+                    <button id="login_button" onclick="return validation()">로그인</button>
+
+                    <button id="register_button" type="button" onclick="location.href='/register.html'">회원가입</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -73,16 +69,23 @@
             </div>
             <hr style="width:80%; margin-top:1.3rem;">
             <!-- 폼 -->
-            <form action="/f_find_pw/" method="post" name='form2' onsubmit="return check_up2()">
-                {% csrf_token %}
-                <div class="regi_box">
-                    <label style="text-align: center;">아이디</label>
-                    <input type="text" id="id2" name="id2" placeholder='ID'>
-                    <label style="text-align: center;">비밀번호</label>
-                    <input type="password" id="pw2" name="pw2" placeholder="PASSWORD">
-                </div>
-                <input type='submit' class='login_btn' value='인증하기' style="margin:2.5rem 0 2rem 0;">
-            </form>
+            <div class="login_content">
+                <form action="/f_find_pw/" method="post" name='form' class="login-form" onsubmit="return check_up2()">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="email" placeholder="학번" autocomplete="nope">
+                      </div>
+                      <div class="input-field">
+                        <input type="password" placeholder="비밀번호" autocomplete="new-password">
+                      </div>
+                      <a href="#" class="link">Forgot Your Password?</a>
+                    </div>
+                    <div class="action">
+                      <button></button>
+                      <button>Sign in</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -119,6 +122,7 @@
 
     <div include-html="reference/footer.html"></div>
 </body>
+<script type="text/javascript" rel="javascript" src="/static/js/login.js"></script>
 <script>
     includeHTML();
     function logout() {
@@ -131,25 +135,6 @@
     // 인증하기 클릭시 modal 띄움
     function pop_modal(){
         document.getElementById('m1').style.display = "block";
-    }
-
-    // ID/비번 안치면 빠꾸
-    function check_up1() {
-        if (!document.getElementById('pw').value || !document.getElementById('id').value) {
-            alert('⚠️ ID/PW를 입력해주세요.');
-            return false;
-        }
-        pop_modal();
-        return true;
-    }
-    function check_up2() {
-        if (!document.getElementById('pw2').value || !document.getElementById('id2').value) {
-            alert('⚠️ ID/PW를 입력해주세요.');
-            form2.pw2.focus();
-            return false;
-        }
-        pop_modal();
-        return true;
     }
 
     var b2 = document.getElementById("b2");
