@@ -1,4 +1,5 @@
 /* ---------------------------------( login  )---------------------------------------- */
+
 .login-container{
     display: flex;
     background: linear-gradient(125deg, white, #E8E9ED);
@@ -26,6 +27,7 @@
     text-align: center;
 }
 
+
 .login_title{
     text-align: center;    
     padding-top:2rem;
@@ -33,7 +35,23 @@
     font-weight: bold;
 }
 
-.textbox{
+.textbox {
+            margin: 0 auto;
+        }
+
+.login_box{
+    text-align:center;
+    margin: 0 auto; 
+    width:700px;
+    margin-top:1.5rem;
+    border:0.001px solid rgb(216, 216, 216);
+    background-color: white; 
+    padding:1.5rem;
+    padding-bottom:2.5rem;
+    margin-bottom:4rem;
+}
+
+.textbox {
     margin: 0 auto;
     width: 50%;
     height: auto;
@@ -58,7 +76,6 @@
     outline: 0;
     height:1.5rem;
 }
-
 .textbox a {
     font-size: 0.6rem;
     text-align: right;
@@ -188,3 +205,72 @@
   .login-form .action button:nth-child(2):hover {
     background: #003D91;
   }
+.login_btn {
+    background: rgb(164, 26, 55);
+    width:17%;  
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    margin-top: 1.5rem;
+    border-radius: 3px;
+    padding:0.5rem;
+    cursor: pointer;
+    outline: 0;
+}
+
+.regi_find_pwd{
+    font-size:1rem;
+    margin-top: 1.5rem;
+    color:rgb(204, 204, 204)
+}
+
+.regi_find_pwd a{
+    text-decoration: none;
+    color: #313131;
+}
+
+.regi_find_pwd span{
+    margin-left : 1rem;
+    margin-right : 1rem;
+} 
+
+.filter_btn:hover,
+.ajax_search_btn:hover,
+.add_btn:hover,
+.save_btn:hover,
+.login_btn:hover,
+.regi_btn:hover,
+.go_result_btn:hover,
+.suc_btn:hover 
+{
+    background-color: #FEC034;
+    font-weight: bold;
+}
+
+body:not(.device-touch) .info_btn,
+body:not(.device-touch) .filter_btn,
+body:not(.device-touch) .ajax_search_btn,
+body:not(.device-touch) .add_btn,
+body:not(.device-touch) .save_btn,
+body:not(.device-touch) .tooltip,
+body:not(.device-touch) .rbutton,
+body:not(.device-touch) .show_table,
+body:not(.device-touch) .my_box_mod_btn,
+body:not(.device-touch) .bg_btn_style,
+body:not(.device-touch) .login_btn,
+body:not(.device-touch) .regi_btn,
+body:not(.device-touch) .go_result_btn,
+body:not(.device-touch) .suc_btn 
+{
+    transition: background-color .2s linear;
+    -webkit-transition: background-color .2s linear;
+}
+
+.login_btn_default{
+    margin-top: 22px;
+    color:#d32f2f; 
+    font-weight: bold;
+    font-size:1.2rem;
+}
+

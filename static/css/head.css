@@ -1,0 +1,279 @@
+
+
+.csstest{
+    color:red;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR','sans-serif';
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* 아이폰에서 input css 적용하기 */
+input[type="submit"],
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="button"]
+{
+    -webkit-appearance: none;
+}
+
+
+/* ---------------------------------( ref - 메뉴바 )---------------------------------------- */
+
+.header{
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+
+    position: absolute;
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 100;
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+
+
+.navbar_logo img {
+    width: 130px;
+    height: 60px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar_menu1 {
+    display: inline-block;
+    font-size: 20px;
+    list-style: none;
+    padding-left: 1pc;
+    margin: 0;
+}
+
+.navbar_menu1 li {
+    margin-left: 3pc;
+    font-size: 19px;
+    padding: 8px 16px;
+    float: left;
+    cursor: pointer;
+}
+
+.navbar_menu2 {
+    display: inline-block;
+    font-size: 20px;
+    list-style: none;
+    padding-right: 4pc;
+    margin: 0;
+
+}
+
+.navbar_menu2 li {
+    margin-left: 3pc;
+    font-size: 19px;
+    padding: 8px 16px;
+    float: left;
+    cursor: pointer;
+}
+
+.navbar_menu1 li a:hover,
+.navbar_menu2 li a:hover,
+.regi_find_pwd a:hover
+{
+    font-weight: bold;
+    color : rgb(14, 32, 127);
+}
+
+
+
+/* ---------------------------------( head - 메인 )---------------------------------------- */
+
+.bg_wrapper{
+    background-color: rgba(241, 241, 241, 0.575);
+}
+
+.main_bg {
+    animation: fadein 2s;
+    -webkit-animation: fadein 2s;
+
+    width:100%;
+    max-width: 1920px;
+    min-height:1000px;
+    background-image: url('../img/main.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto;
+}
+
+.bg_text_btn {
+    width:53rem;
+    min-height:20rem;
+    clear:right;
+    float:right;
+    margin-top:5rem;
+    margin-right:3.0rem;
+    text-align:center;
+    color:white;
+}
+
+.bg_small_text{
+    letter-spacing:-3px;
+    font-size:2rem;
+}
+
+.bg_big_text{
+    font-size:4rem;
+    width:100%;
+}
+
+.bg_btn{
+    padding-top : 2.5rem;
+}
+
+.bg_btn_style{
+    font-weight:bold;
+    color:white;
+    font-size:1.2rem;
+    border-radius: 3px;
+    border:0;
+    background-color: #313131;
+    width:9rem;
+    height:3.5rem;
+    cursor: pointer;
+}
+
+.bg_btn_style:hover{
+    background-color: white;
+    font-weight: bold;
+    color:black;
+}
+
+.num_visit{
+    color:rgb(207, 207, 207);
+    font-size:0.9rem;
+    font-weight: bold;
+    letter-spacing:0.8px;
+    width:180px;
+    clear:right;
+    float:right;
+    margin-top:15.2rem;
+    margin-right:0.5rem;
+}
+
+.popup_content{
+    margin:0 auto;
+    text-align: center;
+    width:80%;
+}
+.popup_title{
+    margin-top:2rem;
+    font-size:2.5rem;
+    font-weight:bold;
+    color : rgb(164, 26, 55)
+}
+.popup_box{
+    margin:0 auto;
+    font-size:1.1rem;
+    margin-top:2rem;
+    margin-bottom:1rem;
+    text-align:left;
+    padding:1.5rem 2rem 1.5rem 2rem;
+    border: 1px solid rgb(216, 216, 216);
+}
+.popup_box li{
+    line-height: 2.5rem;
+}
+.popup_check{
+    font-size:1.2rem;
+    text-align: right;
+    color:gray;
+}
+
+@keyframes fadein {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from { opacity:0;}
+    to {opacity:1;}
+}
+
+
+
+
+/* ---------------------------------( ref footer )---------------------------------------- */
+
+
+.footer {
+    font-size: 0.7rem;
+    background-color:#313131;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    padding: 2rem;
+}
+
+.footer_list {
+    list-style: none;
+    color: lightgrey;
+    letter-spacing: 2px;
+
+    border-right: 0.1px solid lightgray;
+}
+.footer_list li {
+    margin: 10px 150px 5px;
+    text-align: center;
+    margin-left: 130px;
+}
+.copyright {
+    text-align: center;
+    font-size: 0.7rem;
+    color: grey;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.info_btn {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 35px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFF;
+    top: auto;
+    left: auto;
+    right: 30px;
+    bottom: 35px;
+    cursor: pointer;
+    border-radius: 100%;
+    display:block;
+    padding:10px;
+}
+
+.info_btn:hover {
+    background-color: rgba(164, 26, 56, 0.829);
+  }
+
+
