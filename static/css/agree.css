@@ -8,12 +8,15 @@
 }
 
 .info_box{
-    margin: 0 auto; 
-    width: 100%;
-    max-width: 1280px;
-    margin-top:1rem;
+    text-align:center;
+    margin: 0 auto;
+    width:700px;
+    margin-top:1.5rem;
     border:0.001px solid rgb(216, 216, 216);
-    background-color: white; 
+    background-color: white;
+    padding:1.5rem;
+    padding-bottom:2.5rem;
+    margin-bottom:4rem;
 }
 
 .info_box_wrapper{
@@ -30,6 +33,9 @@
     font-weight:normal;
     font-size:0.9rem;
     text-align:left;
+}
+.info_agree input[agree] {
+    transform: scale(1.5);
 }
 
 .confirm_btn {

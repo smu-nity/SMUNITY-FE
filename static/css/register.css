@@ -1,7 +1,7 @@
 /* ---------------------------------( register )---------------------------------------- */
 
 .regi_box {
-<<<<<<< HEAD
+
     margin: 0 auto;
     width: 50%;
     font-size: 30px;
@@ -37,18 +37,15 @@
     transition: all .2s;
 }
 
-.regi_box input::placeholder {
-  color:black;  
-  font-size:20px;
-}
+
 
 .regi_box input[id="pw"]::placeholder,input[id="pw2"]::placeholder {
   color:gray;
-  font-size:20px;
+  font-size:1rem;
 }
 
 .regi_small_box select{
-    font-size: 20px;
+    font-size: 1rem;
     display: block;
     font-family: 'Rubik', sans-serif;
     width: 100%;
@@ -72,6 +69,7 @@
     height:40px;
     margin-top:50px;
     margin-bottom: 50px;
+    padding:10px;
     border:0px;
     border-radius: 10px;
     border-top-left-radius: 4px;
@@ -84,27 +82,21 @@
   .regi_box .regi_btn:hover
 {
     background: #003D91;
-=======
-    text-align:center;
-    margin: 0 auto; 
-    width: 350px;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     font-weight: bold;
 }
 
 .regi_box label{
     text-align: left;
-    font-size:1.1rem;
+    font-size:1.5rem;
     margin-top: 2rem;
 }
 
 .regi_box input {
     font-size: 1rem;
     background: none;
-    border:0.01px solid rgb(216, 216, 216);
+    <!--border:0.01px solid rgb(216, 216, 216);-->
+    border-bottom: 1px solid #747474;
     padding: 10px 10px 10px 15px;
     margin-top:0.5rem;
     outline: 0;
@@ -112,13 +104,14 @@
 }
 
 .regi_box input::placeholder {
+    font-size: 16px;
     color:rgb(143, 143, 143);
 }
 
 .regi_box select{
-    font-size: 1rem;
+    font-size: 16px;
     background: none;
-    border:0.01px solid rgb(216, 216, 216);
+    border-bottom:0.01px solid #747474;
     padding: 0px 10px 0px 10px;
     margin-top:0.5rem;
     outline: 0;
@@ -139,12 +132,11 @@
     outline: 0;
     margin-top:2.5rem;
     margin-bottom: 3rem;
->>>>>>> 9ab589924a7bc48c09e575eb73c0c0e93e7289b0
 }
 
 .regi_guide{
     text-align: left; 
-<<<<<<< HEAD
+
     color:#003D91;
     font-size:0.9rem; 
     font-weight: lighter;
@@ -233,9 +225,4 @@
     width: 100px;
     height: 100px;
 }
-=======
-    color:#d32f2f; 
-    font-size:0.9rem; 
-    font-weight: lighter;
-}
->>>>>>> 9ab589924a7bc48c09e575eb73c0c0e93e7289b0
+

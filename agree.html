@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-219523848-1"></script>
-    <title>Please Graduate</title>
+    <title>Smunity</title>
 </head>
 <body>
     <div include-html="reference/navbar.html"></div>
@@ -26,13 +26,11 @@
     <div class="gray_sec">
         <div class="container">
             <div style="font-size:4rem;">
-                <i class="fas fa-graduation-cap"></i>
             </div>
             <div class="big_title">이용약관 동의</div>
             <div class="small_title">아래 사항을 모두 읽고 약관에 동의해주세요.</div>
         </div>
     </div>
-
     <div class="white_sec">
         <div class="container">
             <!-- 검사 대상 박스 -->
@@ -95,11 +93,7 @@
                 </div>
                 <!-- 동의 체크박스 -->
                 <div class="info_agree">
-                    <label style='cursor: pointer;'>
-                        <input type="checkbox" onclick="agree_func()" id="agree">
-                        <label for='agree'></label>
-                        &nbsp;위 검사관련 및 안내사항을 확인하였고 개인정보 수집에 동의합니다.
-                    </label>
+                        <input type="checkbox"  id="agree" />위 검사관련 및 안내사항을 확인하였고 개인정보 수집에 동의합니다.</input>
                 </div>
             </div>
 
@@ -132,75 +126,7 @@
         </div>
     </div>
 
-    <!-- 검사대상표 모달 -->
-    <div id="target_modal" class="modal" >
-        <div class="modal-content" style='width:70%'>
-            <span class="close" id="target_close">&times;</span>
-            <br>
-            <div class="modal_div">
-                <div class="p_div">
-                    <!-- 추천과목 -->
-                    <div style="font-size : 1.5rem;"><i class="my_i fas fa-check-circle"></i> 검사대상표
-                    </div>
-                    <div class="mydiv">아래 표에 해당하는 학과-학번만 회원가입이 가능합니다.</div>
-                    <hr>
 
-                    <div class='target_num_div'>
-                        현재 총 <span class='target_color_span'>{{ dep_num }}</span>개 학과/전공 검사 가능
-                    </div>
-
-                    <table class="target_table">
-                        <tr>
-                            <th class="target_table_th" style='border-left: 1px solid #dadada;'>학과/전공</th>
-                            <th class="target_table_th">학번</th>
-                        </tr>
-                        {% for dep, year in target %}
-                        <tr>
-                            <td class="target_table_td" style='border-left: 1px solid #dadada;'>{{ dep }}</td>
-                            <td class="target_table_td" >{{ year }}</td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-
-                    <div class='target_caution_div'>
-                        ※ 전공이 정해지지 않은 학부 소속 1학년은 회원가입시 희망전공을 선택합니다.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- 로딩 모달 창 -->
-    <div id='m1' class="modal">
-        <div class="load-modal-content">
-            <div class="modal_loadcontainer">
-                <div class="sk-chase">
-                    <div class="sk-chase-dot"></div>
-                    <div class="sk-chase-dot"></div>
-                    <div class="sk-chase-dot"></div>
-                    <div class="sk-chase-dot"></div>
-                    <div class="sk-chase-dot"></div>
-                    <div class="sk-chase-dot"></div>
-                </div>
-                <div class="loading">
-                    <span>인</span>
-                    <span>증</span>
-                    <span>정</span>
-                    <span>보</span>
-                    <span>확</span>
-                    <span>인</span>
-                    <span>중</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                </div>
-                <div class="load_info">
-                    창을 이동하지 마세요!
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div include-html="reference/footer.html"></div>
 </body>
