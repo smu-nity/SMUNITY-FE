@@ -14,6 +14,7 @@
 .regi_small_box{
     color: black;
     margin-top:30px;
+    padding:15px;
 }
 
 .regi_gray{
@@ -24,7 +25,7 @@
     font-size: 20px;
     display: block;
     font-family: 'Rubik', sans-serif;
-    width: 100%;
+    width: 95%;
     align-content: center;
     margin: auto;
     margin-top: 50px;
@@ -48,7 +49,6 @@
     font-size: 1rem;
     display: block;
     font-family: 'Rubik', sans-serif;
-    width: 100%;
     align-content: center;
     margin: auto;
     margin-top: 50px;
