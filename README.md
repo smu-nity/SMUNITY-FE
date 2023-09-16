@@ -10,7 +10,7 @@
 
 ## ⚒️기술 스택
 
-* ### 백엔드: Django
+* ### 백엔드: Django, MySQL
 * ### 프론트엔드: HTML, CSS, JavaScript
 
 ## :blue_book: 소스 코드 참고
